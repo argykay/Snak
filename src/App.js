@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Ida pushes and Kay pushes
+          Ida pushes and Kay pushes Kristin does the major push 
         </a>
       </header>
     </div>
