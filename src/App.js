@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Ida pushes
+          Ida pushes and Kay pushes
         </a>
       </header>
     </div>
