@@ -1,16 +1,38 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
+import firebase from './Firebase'; 
+
 import "./App.css";
+import SignUpForm from "./SignUpForm";
+
+
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="background">
-        <div className="mobile-container">
-          <h1 className="logo">snak</h1>
-        </div>
-      </div>
-    );
+
+  constructor(){  
+    super();
+    this.state ={
+    user: null
+  };
+}
+  
+  componentDidMount(){
+    const reference = firebase.database().ref('user'); 
+    
+    reference.on('value', snapshot => {
+      let FBUser = snapshot.val(); 
+      this.setState({user: FBUser}); 
+    })
   }
+
+  render(){
+  return (
+    <div className="App">
+      <SignUpForm />
+      <p> {this.state.user}</p>
+    </div>
+  );
+}
 }
 
 export default App;
