@@ -12,7 +12,9 @@ class App extends Component {
   constructor(){  
     super();
     this.state ={
-    user: null
+    user: null,
+    fullname: null,
+    userID: null
   };
 }
   
@@ -25,11 +27,27 @@ class App extends Component {
     })
   }
 
+  registerUser = fullName => {
+    firebase.auth().onAuthStateChanged(FBUser => {
+      FBUser.updateProfile({
+        fullname: fullName
+      }).then(()=>{
+        this.setState({
+          user: FBUser,
+          fullname: FBUser.fullname,
+          userID: FBUser.uid
+
+        })
+      })
+    })
+
+  }
+
   render(){
   return (
     <div className="App">
-      <SignUpForm />
-      <p> {this.state.user}</p>
+      <SignUpForm registerUser={this.registerUser}/>
+      <p> {this.state.fullname}</p>
     </div>
   );
 }
