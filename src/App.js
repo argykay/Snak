@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import "./DailyHint.js/index.js";
+import DailyHint from "./DailyHint.js";
 
 class App extends Component {
   render() {
     return (
       <div className="background">
         <div className="mobile-container">
-          <div className="DailyHint"></div>
+          <DailyHint />
         </div>
       </div>
     );
