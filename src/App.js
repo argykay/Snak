@@ -1,56 +1,48 @@
-import React, {Component} from "react";
-import firebase from './Firebase'; 
+import React, { Component } from "react";
+import firebase from "./Firebase";
 
 import "./App.css";
-import SignUpForm from "./SignUpForm";
-
-
-
+import StartScreen from "./screens/StartScreen";
 
 class App extends Component {
-
-  constructor(){  
+  constructor() {
     super();
-    this.state ={
-    user: null,
-    fullname: null,
-    userID: null
-  };
-}
-  
-  componentDidMount(){
-    const reference = firebase.database().ref('user'); 
-    
-    reference.on('value', snapshot => {
-      let FBUser = snapshot.val(); 
-      this.setState({user: FBUser}); 
-    })
+    this.state = {
+      user: null,
+      fullname: null,
+      userID: null
+    };
+  }
+
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged(FBUser => {
+      if (FBUser) {
+        this.setState({
+          user: FBUser,
+          fullname: FBUser.fullname,
+          userID: FBUser.uid
+        });
+      }
+    });
   }
 
   registerUser = fullName => {
     firebase.auth().onAuthStateChanged(FBUser => {
       FBUser.updateProfile({
         fullname: fullName
-      }).then(()=>{
+      }).then(() => {
         this.setState({
           user: FBUser,
           fullname: FBUser.fullname,
           userID: FBUser.uid
+        });
+      });
+    });
+  };
 
-        })
-      })
-    })
-
+  render() {
+    return <StartScreen />;
   }
-
-  render(){
-  return (
-    <div className="App">
-      <SignUpForm registerUser={this.registerUser}/>
-      <p> {this.state.fullname}</p>
-    </div>
-  );
-}
 }
 
 export default App;
