@@ -4,6 +4,8 @@ import ErrorMessage from "../components/ErrorMessage";
 import BackButton from "../components/BackButton/BackButton";
 import StartScreen from "./StartScreen";
 
+//Test comment 
+
 class LogInScreen extends Component {
   constructor(props) {
     super(props);
