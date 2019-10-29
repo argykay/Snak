@@ -86,10 +86,10 @@ class LogInScreen extends Component {
               value={this.state.password}
               onChange={this.handleChange}
             ></input>
-            <button value="button">go!</button>
+            <button className="go" value="button">go!</button>
           </form>
-          <BackButton onClick={this.handleBackClick} />
         </div>
+        <BackButton onClick={this.handleBackClick} />
       </div>
     );
   }

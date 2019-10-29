@@ -116,10 +116,10 @@ class SignUpScreen extends Component {
               value={this.state.repeatpassword}
               onChange={this.handleChange}
             ></input>
-            <button value="button">go!</button>
+            <button className="go" value="button">go!</button>
           </form>
-          <BackButton onClick={this.handleBackClick} />
         </div>
+        <BackButton onClick={this.handleBackClick} />
       </div>
     );
   }

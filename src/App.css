@@ -31,13 +31,30 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  width: 50%;
   margin: auto;
+  position: relative;
+  top:25%
 }
 
 form {
   display: flex;
   flex-direction: column;
+}
+
+form input {
+  border: none;
+  margin: auto;
+  padding: 20px;
+  margin-bottom: 19px;
+  border-radius: 30px;
+  width: 205px;
+  background: rgba(229, 229, 229, 0.15);
+  font-family: fira code;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color:#FF7661;
 }
 
 .startscreen {
@@ -46,8 +63,49 @@ form {
   width: 30%;
 }
 
+ .go {
+  border: none;
+  margin: auto;
+  padding: 18px;
+  margin-top: 12px;
+  border-radius: 30px;
+  width: 180px;
+  background: rgba(229, 229, 229, 0.15);
+  color: #FF7661;
+  font-weight: bold;
+  font-family: fira code;
+  font-size: 24px;
+}
+
+::placeholder{
+  color:rgba(255, 118, 97, 0.55);
+}
+
 .button-one {
+  border: none;
+  margin: auto;
+  padding: 18px;
+  margin-top: 12px;
+  border-radius: 30px;
+  width: 180px;
+  background: rgba(229, 229, 229, 0.15);
+  color: #FF7661;
+  font-weight: bold;
+  font-family: fira code;
+  font-size: 24px; 
 }
 
 .button-two {
+  border: none;
+  margin: auto;
+  padding: 18px;
+  margin-top: 12px;
+  border-radius: 30px;
+  width: 180px;
+  background: #FF7661;
+  color: #012A46;
+  font-weight: bold;
+  font-family: fira code;
+  font-size: 24px;
+  margin-top: 80px;
 }
