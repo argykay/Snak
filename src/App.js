@@ -4,7 +4,7 @@ import firebase from "./Firebase";
 import "./App.css";
 
 import StartScreen from "./screens/StartScreen";
-import Game from "./screens/Game";
+import HintScreen from "./screens/HintScreen";
 
 class App extends Component {
   constructor() {
@@ -43,10 +43,11 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state);
+    //console.log(this.state);
     return (
       <div className="main-container">
-        <Game />
+        <HintScreen />
+        {/* <StartScreen /> */}
       </div>
     );
   }
