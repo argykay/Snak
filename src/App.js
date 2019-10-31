@@ -15,7 +15,7 @@ class App extends Component {
       imageArray: [
         {
           id: "1",
-          svg: "./images/coffe.svg",
+          svg: "./images/coffee.svg",
           wordDanish: "Kaffe",
           wordEnglish: "Coffee",
           isUsed: false
