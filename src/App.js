@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import firebase from "./Firebase";
 
 import "./App.css";
+
 import StartScreen from "./screens/StartScreen";
+import Game from "./screens/Game";
 
 class App extends Component {
   constructor() {
@@ -10,24 +12,7 @@ class App extends Component {
     this.state = {
       user: null,
       fullname: null,
-      userID: null,
-
-      imageArray: [
-        {
-          id: "1",
-          svg: "./images/coffee.svg",
-          wordDanish: "Kaffe",
-          wordEnglish: "Coffee",
-          isUsed: false
-        },
-        {
-          id: "2",
-          svg: "./images/teacher.svg",
-          wordDanish: "Lærer",
-          wordEnglish: "Teacher",
-          isUsed: false
-        }
-      ]
+      userID: null
     };
   }
 
@@ -58,7 +43,12 @@ class App extends Component {
   };
 
   render() {
-    return <StartScreen />;
+    console.log(this.state);
+    return (
+      <div className="main-container">
+        <Game />
+      </div>
+    );
   }
 }
 
