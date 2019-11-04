@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import firebase from "../Firebase";
+import firebase, { loginToFirebase} from "../Firebase";
 import ErrorMessage from "../components/ErrorMessage";
 import BackButton from "../components/BackButton/BackButton";
 import StartScreen from "./StartScreen";
 
-//Test comment 
 
 class LogInScreen extends Component {
   constructor(props) {
@@ -20,6 +19,7 @@ class LogInScreen extends Component {
     //binding functions
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.firebaseLoginUser = this.firebaseLoginUser.bind(this); 
   }
 
   handleChange(e) {
@@ -30,25 +30,24 @@ class LogInScreen extends Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
+    this.firebaseLoginUser(); 
+    this.setState({ userLoggedIn: true });
+  }
+
+  firebaseLoginUser(){
     let logInCredentials = {
       email: this.state.email,
       password: this.state.password
     };
-    e.preventDefault();
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(
-        logInCredentials.email,
-        logInCredentials.password
-      )
-      .catch(error => {
-        if (error.message !== null) {
-          this.setState({ errorMessage: error.message });
-        } else {
-          this.setState({ errorMessage: null });
-        }
-      });
-    this.setState({ userLoggedIn: true });
+    //Firebase auth 
+    loginToFirebase(logInCredentials.email, logInCredentials.password, (error) => {
+    if (error.message !== null) {
+      this.setState({ errorMessage: error.message });
+    } else {
+      this.setState({ errorMessage: null });
+    } 
+   })
   }
 
   handleBackClick = () => {

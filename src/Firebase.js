@@ -15,10 +15,39 @@ const firebaseConfig = {
   appId: APP_ID,
   measurementId: "G-2L4ERBTD1K"
 };
+
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
+
+export const loginToFirebase = (email, password, onError) => {
+  firebase
+  .auth()
+  .signInWithEmailAndPassword(
+    email,
+    password
+  )
+  .catch(error => {
+  onError(error); 
+  });
+}
+
+export const signUpToFirebase = (email, password, fullname, onError)=>{
+  firebase
+  .auth()
+  .createUserWithEmailAndPassword(
+    email,
+    password
+  )
+  .then(() => {
+    this.props.registerUser(fullname);
+  })
+  .catch(error => {
+      onError(error);
+  });
+}
 
 export default firebase;
