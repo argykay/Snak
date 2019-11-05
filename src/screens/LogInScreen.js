@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import firebase from "../Firebase";
+import firebase, { loginToFirebase } from "../Firebase";
 import ErrorMessage from "../components/ErrorMessage";
 import BackButton from "../components/BackButton/BackButton";
 import StartScreen from "./StartScreen";
-
-//Test comment 
 
 class LogInScreen extends Component {
   constructor(props) {
@@ -17,42 +15,44 @@ class LogInScreen extends Component {
       goBack: false
     };
 
-    //binding functions
+    // Binding functions
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.firebaseLoginUser = this.firebaseLoginUser.bind(this);
   }
 
   handleChange(e) {
     const itemName = e.target.name;
     const itemValue = e.target.value;
-
     this.setState({ [itemName]: itemValue });
   }
 
   handleSubmit(e) {
+    e.preventDefault();
+    this.firebaseLoginUser();
+    this.setState({ userLoggedIn: true });
+  }
+
+  firebaseLoginUser() {
     let logInCredentials = {
       email: this.state.email,
       password: this.state.password
     };
-    e.preventDefault();
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(
-        logInCredentials.email,
-        logInCredentials.password
-      )
-      .catch(error => {
+    // Firebase authentication
+    loginToFirebase(
+      logInCredentials.email,
+      logInCredentials.password,
+      error => {
         if (error.message !== null) {
           this.setState({ errorMessage: error.message });
         } else {
           this.setState({ errorMessage: null });
         }
-      });
-    this.setState({ userLoggedIn: true });
+      }
+    );
   }
 
   handleBackClick = () => {
-    console.log("back clicked");
     this.setState({ goBack: true });
   };
 
@@ -86,7 +86,9 @@ class LogInScreen extends Component {
               value={this.state.password}
               onChange={this.handleChange}
             ></input>
-            <button className="go" value="button">go!</button>
+            <button className="go" value="button">
+              go!
+            </button>
           </form>
         </div>
         <BackButton onClick={this.handleBackClick} />

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ErrorMessage from "../components/ErrorMessage";
-import firebase from "../Firebase";
+import firebase, { signUpToFirebase } from "../Firebase";
 import BackButton from "../components/BackButton/BackButton";
 import StartScreen from "./StartScreen";
 
@@ -17,15 +17,19 @@ class SignUpScreen extends Component {
       goBack: false
     };
 
-    //binding functions
+    // Binding functions
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.firebaseCreateUser = this.firebaseCreateUser.bind(this);
   }
 
   handleChange(e) {
-    const itemName = e.target.name;
-    const itemValue = e.target.value;
+    const name = e.target.name;
+    const value = e.target.value;
+    this.checkPasswords(name, value);
+  }
 
+  checkPasswords(itemName, itemValue) {
     this.setState({ [itemName]: itemValue }, () => {
       if (this.state.password !== this.state.repeatpassword) {
         this.setState({ errorMessage: "Passwords do not match" });
@@ -36,29 +40,29 @@ class SignUpScreen extends Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
+    this.firebaseCreateUser();
+    this.setState({ userSignedUp: true });
+  }
+
+  firebaseCreateUser() {
     let signUpCredentials = {
       fullname: this.state.fullname,
       email: this.state.email,
       password: this.state.password
     };
-    e.preventDefault();
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(
-        signUpCredentials.email,
-        signUpCredentials.password
-      )
-      .then(() => {
-        this.props.registerUser(signUpCredentials.fullname);
-      })
-      .catch(error => {
+    signUpToFirebase(
+      signUpCredentials.email,
+      signUpCredentials.password,
+      signUpCredentials.fullname,
+      error => {
         if (error.message !== null) {
           this.setState({ errorMessage: error.message });
         } else {
           this.setState({ errorMessage: null });
         }
-      });
-    this.setState({ userSignedUp: true });
+      }
+    );
   }
 
   handleBackClick = () => {
@@ -116,7 +120,9 @@ class SignUpScreen extends Component {
               value={this.state.repeatpassword}
               onChange={this.handleChange}
             ></input>
-            <button className="go" value="button">go!</button>
+            <button className="go" value="button">
+              go!
+            </button>
           </form>
         </div>
         <BackButton onClick={this.handleBackClick} />

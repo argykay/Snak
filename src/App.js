@@ -10,24 +10,7 @@ class App extends Component {
     this.state = {
       user: null,
       fullname: null,
-      userID: null,
-
-      imageArray: [
-        {
-          id: "1",
-          svg: "./images/coffee.svg",
-          wordDanish: "Kaffe",
-          wordEnglish: "Coffee",
-          isUsed: false
-        },
-        {
-          id: "2",
-          svg: "./images/teacher.svg",
-          wordDanish: "Lærer",
-          wordEnglish: "Teacher",
-          isUsed: false
-        }
-      ]
+      userID: null
     };
   }
 

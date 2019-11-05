@@ -33,7 +33,7 @@
   flex-direction: column;
   margin: auto;
   position: relative;
-  top:25%
+  top: 25%;
 }
 
 form {
@@ -54,7 +54,7 @@ form input {
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
-  color:#FF7661;
+  color: #ff7661;
 }
 
 .startscreen {
@@ -63,7 +63,7 @@ form input {
   width: 30%;
 }
 
- .go {
+.go {
   border: none;
   margin: auto;
   padding: 18px;
@@ -71,14 +71,14 @@ form input {
   border-radius: 30px;
   width: 180px;
   background: rgba(229, 229, 229, 0.15);
-  color: #FF7661;
+  color: #ff7661;
   font-weight: bold;
   font-family: fira code;
   font-size: 24px;
 }
 
-::placeholder{
-  color:rgba(255, 118, 97, 0.55);
+::placeholder {
+  color: rgba(255, 118, 97, 0.55);
 }
 
 .button-one {
@@ -89,10 +89,10 @@ form input {
   border-radius: 30px;
   width: 180px;
   background: rgba(229, 229, 229, 0.15);
-  color: #FF7661;
+  color: #ff7661;
   font-weight: bold;
   font-family: fira code;
-  font-size: 24px; 
+  font-size: 22px;
 }
 
 .button-two {
@@ -101,11 +101,11 @@ form input {
   padding: 18px;
   margin-top: 12px;
   border-radius: 30px;
-  width: 180px;
-  background: #FF7661;
-  color: #012A46;
+  width: 220px;
+  background: #ff7661;
+  color: #012a46;
   font-weight: bold;
   font-family: fira code;
-  font-size: 24px;
+  font-size: 22px;
   margin-top: 80px;
 }
