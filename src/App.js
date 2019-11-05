@@ -4,7 +4,7 @@ import firebase from "./Firebase";
 import "./App.css";
 
 import StartScreen from "./screens/StartScreen";
-import HintScreen from "./screens/HintScreen";
+import HintScreen from "./screens/HintScreen/HintScreen";
 
 class App extends Component {
   constructor() {
