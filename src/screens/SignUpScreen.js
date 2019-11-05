@@ -24,8 +24,12 @@ class SignUpScreen extends Component {
   }
 
   handleChange(e) {
-    const itemName = e.target.name;
-    const itemValue = e.target.value;
+    const name = e.target.name;
+    const value = e.target.value;
+    this.checkPasswords(name, value);
+  }
+
+  checkPasswords(itemName, itemValue) {
     this.setState({ [itemName]: itemValue }, () => {
       if (this.state.password !== this.state.repeatpassword) {
         this.setState({ errorMessage: "Passwords do not match" });
