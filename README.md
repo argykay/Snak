@@ -4,12 +4,14 @@ Snak is a microlearning App to improve users vocabulary in Danish. The intended 
 
 This App was created throughout the course "Technical Interaction Design" at the Masters Programme in Software Development (Design) at the IT University of Copenhagen.
 
-## Creators of Snak
+## Creators
 
 Katrine Iversen (kati@itu.dk)
 Konstantina Argyropoulou (koar@itu.dk)
 Kristin Kallevik (kkal@itu.dk)
 Ida Marie Borberg (idbo@itu.dk)
+
+## Running the App
 
 ### `npm start`
 
