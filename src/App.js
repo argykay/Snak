@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import firebase from "./Firebase";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+import StartScreen from "./screens/StartScreen";
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user: null,
+      fullname: null,
+      userID: null
+    };
+  }
+
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged(FBUser => {
+      if (FBUser) {
+        this.setState({
+          user: FBUser,
+          fullname: FBUser.fullname,
+          userID: FBUser.uid
+        });
+      }
+    });
+  }
+
+  registerUser = fullName => {
+    firebase.auth().onAuthStateChanged(FBUser => {
+      FBUser.updateProfile({
+        fullname: fullName
+      }).then(() => {
+        this.setState({
+          user: FBUser,
+          fullname: FBUser.fullname,
+          userID: FBUser.uid
+        });
+      });
+    });
+  };
+
+  render() {
+    return <StartScreen />;
+  }
 }
 
 export default App;
