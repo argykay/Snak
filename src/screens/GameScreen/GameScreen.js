@@ -24,12 +24,16 @@ class GameScreen extends Component {
       dataArray[Math.floor(Math.random() * this.state.dataArray.length)].id;
     let image2 =
       dataArray[Math.floor(Math.random() * this.state.dataArray.length)].id;
-    return (
-      <div>
-        <img width="150" src={dataArray[image1].svg}></img>
-        <img width="150" src={dataArray[image2].svg}></img>
-      </div>
-    );
+    if (
+      this.state.dataArray[this.state.hint].id !== image1 &&
+      this.state.dataArray[this.state.hint].id !== image2
+    )
+      return (
+        <div>
+          <img width="150" src={dataArray[image1].svg}></img>
+          <img width="150" src={dataArray[image2].svg}></img>
+        </div>
+      );
   }
 
   render() {
