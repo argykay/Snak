@@ -19,6 +19,7 @@ class GameScreen extends Component {
     return <div>{this.state.dataArray[this.state.hint].wordDanish} </div>;
   }
 
+  /*
   getRandomImages() {
     let image1 =
       dataArray[Math.floor(Math.random() * this.state.dataArray.length)].id;
@@ -39,6 +40,7 @@ class GameScreen extends Component {
       return this.getRandomImages();
     }
   }
+*/
 
   render() {
     return (
