@@ -15,6 +15,7 @@ class GameScreen extends Component {
     return <img width="150" src={dataArray[this.state.hint].svg}></img>;
   }
 
+  //hello
   getHintWord() {
     return <div>{this.state.dataArray[this.state.hint].wordDanish} </div>;
   }
