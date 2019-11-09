@@ -14,7 +14,7 @@ class LogInScreen extends Component {
       userLoggedIn: false,
       goBack: false
     };
-
+//check git pull
     // Binding functions
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
