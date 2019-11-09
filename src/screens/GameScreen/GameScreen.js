@@ -12,7 +12,11 @@ class GameScreen extends Component {
   }
 
   getHintImage() {
-    return <img width="150" src={dataArray[this.state.hint].svg}></img>;
+    return (
+      <div className="game-button">
+        <img className="gm-img" src={dataArray[this.state.hint].svg}></img>{" "}
+      </div>
+    );
   }
 
   getHintWord() {
@@ -31,8 +35,13 @@ class GameScreen extends Component {
     ) {
       return (
         <div>
-          <img width="150" src={dataArray[image1].svg}></img>
-          <img width="150" src={dataArray[image2].svg}></img>
+          <div className="game-button">
+            <img className="gm-img" src={dataArray[image1].svg}></img>
+          </div>
+          <div className="game-button" onClick={this.handleStartGameClick}>
+            {" "}
+            <img className="gm-img" src={dataArray[image2].svg}></img>
+          </div>
         </div>
       );
     } else {
@@ -42,9 +51,14 @@ class GameScreen extends Component {
 
   render() {
     return (
-      <div>
-        <div>{this.getHintImage()}</div>
-        <div>{this.getRandomImages()}</div>
+      <div className="background">
+        <div className="mobile-container">
+          <div className="daily-word">{this.getHintWord()}</div>
+          <div className="gm">
+            <div>{this.getHintImage()}</div>
+            <div>{this.getRandomImages()}</div>
+          </div>
+        </div>
       </div>
     );
   }
