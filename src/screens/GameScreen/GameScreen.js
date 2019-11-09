@@ -15,7 +15,6 @@ class GameScreen extends Component {
     return <img width="150" src={dataArray[this.state.hint].svg}></img>;
   }
 
-  //hello
   getHintWord() {
     return <div>{this.state.dataArray[this.state.hint].wordDanish} </div>;
   }
@@ -28,13 +27,13 @@ class GameScreen extends Component {
     if (
       this.state.dataArray[this.state.hint].id !== image1 &&
       this.state.dataArray[this.state.hint].id !== image2
-    )
+    ){
       return (
         <div>
           <img width="150" src={dataArray[image1].svg}></img>
           <img width="150" src={dataArray[image2].svg}></img>
         </div>
-      );
+      );}
   }
 
   render() {
