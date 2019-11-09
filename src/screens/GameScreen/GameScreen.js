@@ -9,6 +9,8 @@ class GameScreen extends Component {
       dataArray: dataArray,
       hint: this.props.hint
     };
+
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
   getHintWord() {
@@ -44,13 +46,40 @@ class GameScreen extends Component {
     return array;
   }
 
+  handleImageClick(id) {
+    let hintId = this.state.dataArray[this.state.hint].id;
+    if (id === hintId) {
+      console.log("correct");
+    }
+  }
+
   render() {
     let array = this.getRandomImages();
+
     return (
       <div>
-        <img width="150" src={array[0].svg}></img>
-        <img width="150" src={array[1].svg}></img>
-        <img width="150" src={array[2].svg}></img>
+        {console.log(array)}
+        <img
+          width="150"
+          src={array[0].svg}
+          onClick={() => {
+            this.handleImageClick(array[0].id);
+          }}
+        ></img>
+        <img
+          width="150"
+          src={array[1].svg}
+          onClick={() => {
+            this.handleImageClick(array[1].id);
+          }}
+        ></img>
+        <img
+          width="150"
+          src={array[2].svg}
+          onClick={() => {
+            this.handleImageClick(array[2].id);
+          }}
+        ></img>
       </div>
     );
   }
