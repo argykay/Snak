@@ -11,42 +11,46 @@ class GameScreen extends Component {
     };
   }
 
-  getHintImage() {
-    return <img width="150" src={dataArray[this.state.hint].svg}></img>;
-  }
-
   getHintWord() {
     return <div>{this.state.dataArray[this.state.hint].wordDanish} </div>;
   }
 
-  /*
   getRandomImages() {
-    let image1 =
-      dataArray[Math.floor(Math.random() * this.state.dataArray.length)].id;
-    let image2 =
-      dataArray[Math.floor(Math.random() * this.state.dataArray.length)].id;
-    if (
-      this.state.dataArray[this.state.hint].id !== image1 &&
-      this.state.dataArray[this.state.hint].id !== image2 &&
-      image1 !== image2
-    ) {
-      return (
-        <div>
-          <img width="150" src={dataArray[image1].svg}></img>
-          <img width="150" src={dataArray[image2].svg}></img>
-        </div>
+    let image1 = this.state.dataArray[this.getRandomId()].id;
+    let image2 = this.state.dataArray[this.getRandomId()].id;
+    let hintId = this.state.dataArray[this.state.hint].id;
+    if (hintId !== image1 && hintId !== image2 && image1 !== image2) {
+      let tempArray = [];
+      tempArray.push(
+        this.state.dataArray[image1],
+        this.state.dataArray[image2],
+        this.state.dataArray[hintId]
       );
+      return this.shuffle(tempArray);
     } else {
       return this.getRandomImages();
     }
   }
-*/
+
+  getRandomId() {
+    return Math.floor(Math.random() * this.state.dataArray.length);
+  }
+
+  shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
 
   render() {
+    let array = this.getRandomImages();
     return (
       <div>
-        <div>{this.getHintImage()}</div>
-        <div>{this.getRandomImages()}</div>
+        <img width="150" src={array[0].svg}></img>
+        <img width="150" src={array[1].svg}></img>
+        <img width="150" src={array[2].svg}></img>
       </div>
     );
   }
