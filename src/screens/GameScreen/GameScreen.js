@@ -9,6 +9,8 @@ class GameScreen extends Component {
       dataArray: dataArray,
       hint: this.props.hint
     };
+
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
   getHintWord() {
@@ -44,6 +46,15 @@ class GameScreen extends Component {
     return array;
   }
 
+  handleImageClick(id) {
+    let hintId = this.state.dataArray[this.state.hint].id;
+    if (id === hintId) {
+      console.log("correct!");
+    } else {
+      console.log("wrong!");
+    }
+  }
+
   render() {
     let array = this.getRandomImages();
     return (
@@ -52,13 +63,28 @@ class GameScreen extends Component {
           <div className="mobile-container">
             <div className="daily-word">{this.getHintWord()}</div>
             <div className="gm">
-              <div className="game-button">
+              <div
+                className="game-button"
+                onClick={() => {
+                  this.handleImageClick(array[0].id);
+                }}
+              >
                 <img className="gm-img" src={array[0].svg}></img>
               </div>
-              <div className="game-button">
+              <div
+                className="game-button"
+                onClick={() => {
+                  this.handleImageClick(array[1].id);
+                }}
+              >
                 <img className="gm-img" src={array[1].svg}></img>
               </div>
-              <div className="game-button">
+              <div
+                className="game-button"
+                onClick={() => {
+                  this.handleImageClick(array[2].id);
+                }}
+              >
                 <img className="gm-img" src={array[2].svg}></img>
               </div>
             </div>
