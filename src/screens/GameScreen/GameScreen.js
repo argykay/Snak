@@ -48,9 +48,22 @@ class GameScreen extends Component {
     let array = this.getRandomImages();
     return (
       <div>
-        <img width="150" src={array[0].svg}></img>
-        <img width="150" src={array[1].svg}></img>
-        <img width="150" src={array[2].svg}></img>
+        <div className="background">
+          <div className="mobile-container">
+            <div className="daily-word">{this.getHintWord()}</div>
+            <div className="gm">
+              <div className="game-button">
+                <img className="gm-img" src={array[0].svg}></img>
+              </div>
+              <div className="game-button">
+                <img className="gm-img" src={array[1].svg}></img>
+              </div>
+              <div className="game-button">
+                <img className="gm-img" src={array[2].svg}></img>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
