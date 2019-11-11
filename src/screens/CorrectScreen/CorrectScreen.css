@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Code|Rubik&display=swap");
+
+.background {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: #012a46;
+  position: relative;
+  display: flex;
+}
+
+.mobile-container {
+  color: #ff7661;
+  font-family: Rubik;
+  display: flex;
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+  background-color: #012a46;
+  /*position: relative;*/
+  flex-direction: column;
+  margin: auto;
+}
+
+.screen-title {
+  color: #ff7661;
+  font-family: Rubik;
+  font-size: 30px;
+  text-align: center;
+  width: 100%;
+  padding-top: 60px;
+}
+
+.normal-text {
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  align-items: center;
+  text-align: center;
+  color: #ff7661;
+  padding-top: 25px;
+}
+
+.main-button {
+  background-color: #ff7661;
+  color: #012a46;
+  font-family: Fira Code;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  width: 30%;
+  border-radius: 50px;
+  border-color: transparent;
+  margin: auto;
+}
+
+.dh-image {
+  padding: 10%;
+  width: 300px;
+  display: inline-block;
+  margin: auto;
+}

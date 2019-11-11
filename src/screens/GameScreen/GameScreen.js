@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import "./GameScreen.css";
 import dataArray from "../../data/dataArray";
+import CorrectScreen from "../CorrectScreen/CorrectScreen";
 
 class GameScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
       dataArray: dataArray,
-      hint: this.props.hint
+      hint: this.props.hint,
+      //stars: this.props.stars,
+      correctAnswer: false
     };
 
     this.handleImageClick = this.handleImageClick.bind(this);
@@ -46,10 +49,16 @@ class GameScreen extends Component {
     return array;
   }
 
+  addStar() {
+    console.log("a star should be added");
+  }
+
   handleImageClick(id) {
     let hintId = this.state.dataArray[this.state.hint].id;
     if (id === hintId) {
       console.log("correct!");
+      this.addStar();
+      this.setState({ correctAnswer: true });
     } else {
       console.log("wrong!");
     }
@@ -57,6 +66,9 @@ class GameScreen extends Component {
 
   render() {
     let array = this.getRandomImages();
+    if (this.state.correctAnswer === true) {
+      return <CorrectScreen />;
+    }
     return (
       <div>
         <div className="background">
