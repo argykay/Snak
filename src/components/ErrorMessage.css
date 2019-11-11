@@ -1,0 +1,10 @@
+.alert{
+    position: relative;
+    margin: 0 auto;
+    background: #ff7661;
+    border-radius: 30px;
+    bottom: 24px;
+    padding: 9px;
+    font-size: 12px;
+    font-family: Fira code;
+}

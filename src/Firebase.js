@@ -35,8 +35,10 @@ export const loginToFirebase = (email, password, onError) => {
     });
 };
 
+
 // Function to signUp
-export const signUpToFirebase = (email, password, fullname, onError) => {
+/*
+export const signUpToFirebase = (email, password, fullname ) => {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
@@ -44,8 +46,8 @@ export const signUpToFirebase = (email, password, fullname, onError) => {
       this.props.registerUser(fullname);
     })
     .catch(error => {
-      onError(error);
+      alert(error);  
     });
-};
+};*/
 
 export default firebase;
