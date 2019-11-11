@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./GameScreen.css";
 import dataArray from "../../data/dataArray";
 import CorrectScreen from "../CorrectScreen/CorrectScreen";
+import WrongScreen from "../WrongScreen/WrongScreen";
 
 class GameScreen extends Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class GameScreen extends Component {
       dataArray: dataArray,
       hint: this.props.hint,
       //stars: this.props.stars,
-      correctAnswer: false
+      correctAnswer: false,
+      wrongAnswer: false
     };
 
     this.handleImageClick = this.handleImageClick.bind(this);
@@ -60,6 +62,7 @@ class GameScreen extends Component {
       this.addStar();
       this.setState({ correctAnswer: true });
     } else {
+      this.setState({ wrongAnswer: true });
       console.log("wrong!");
     }
   }
@@ -68,6 +71,8 @@ class GameScreen extends Component {
     let array = this.getRandomImages();
     if (this.state.correctAnswer === true) {
       return <CorrectScreen />;
+    } else if (this.state.wrongAnswer === true) {
+      return <WrongScreen />;
     }
     return (
       <div>
