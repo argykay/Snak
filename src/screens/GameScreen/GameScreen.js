@@ -1,13 +1,21 @@
 import React, { Component } from "react";
 import "./GameScreen.css";
 import dataArray from "../../data/dataArray";
+import CorrectScreen from "../CorrectScreen/CorrectScreen";
+import WrongScreen from "../WrongScreen/WrongScreen";
+import HintScreen from "../HintScreen/HintScreen";
+import BackButton from "../../components/BackButton/BackButton";
 
 class GameScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
       dataArray: dataArray,
-      hint: this.props.hint
+      hint: this.props.hint,
+      //stars: this.props.stars,
+      correctAnswer: false,
+      wrongAnswer: false,
+      BackToHint: false
     };
 
     this.handleImageClick = this.handleImageClick.bind(this);
@@ -46,17 +54,37 @@ class GameScreen extends Component {
     return array;
   }
 
+  addStar() {
+    console.log("a star should be added");
+  }
+
   handleImageClick(id) {
     let hintId = this.state.dataArray[this.state.hint].id;
     if (id === hintId) {
       console.log("correct!");
+      this.addStar();
+      this.setState({ correctAnswer: true });
     } else {
+      this.setState({ wrongAnswer: true });
       console.log("wrong!");
     }
   }
 
+  handleBackToHintClick = () => {
+    this.setState({ BackToHint: true });
+  };
+
   render() {
     let array = this.getRandomImages();
+    if (this.state.BackToHint === true) {
+      return <HintScreen />;
+    }
+    if (this.state.correctAnswer === true) {
+      return <CorrectScreen />;
+    }
+    if (this.state.wrongAnswer === true) {
+      return <WrongScreen />;
+    }
     return (
       <div>
         <div className="background">
@@ -86,6 +114,9 @@ class GameScreen extends Component {
                 }}
               >
                 <img className="gm-img" src={array[2].svg}></img>
+              </div>
+              <div className="stickToBottom">
+                <BackButton onClick={this.handleBackToHintClick} />
               </div>
             </div>
           </div>
