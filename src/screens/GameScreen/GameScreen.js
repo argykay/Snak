@@ -3,6 +3,8 @@ import "./GameScreen.css";
 import dataArray from "../../data/dataArray";
 import CorrectScreen from "../CorrectScreen/CorrectScreen";
 import WrongScreen from "../WrongScreen/WrongScreen";
+import HintScreen from "../HintScreen/HintScreen";
+import BackButton from "../../components/BackButton/BackButton";
 
 class GameScreen extends Component {
   constructor(props) {
@@ -12,7 +14,8 @@ class GameScreen extends Component {
       hint: this.props.hint,
       //stars: this.props.stars,
       correctAnswer: false,
-      wrongAnswer: false
+      wrongAnswer: false,
+      BackToHint: false
     };
 
     this.handleImageClick = this.handleImageClick.bind(this);
@@ -67,11 +70,19 @@ class GameScreen extends Component {
     }
   }
 
+  handleBackToHintClick = () => {
+    this.setState({ BackToHint: true });
+  };
+
   render() {
     let array = this.getRandomImages();
+    if (this.state.BackToHint === true) {
+      return <HintScreen />;
+    }
     if (this.state.correctAnswer === true) {
       return <CorrectScreen />;
-    } else if (this.state.wrongAnswer === true) {
+    }
+    if (this.state.wrongAnswer === true) {
       return <WrongScreen />;
     }
     return (
@@ -103,6 +114,9 @@ class GameScreen extends Component {
                 }}
               >
                 <img className="gm-img" src={array[2].svg}></img>
+              </div>
+              <div className="stickToBottom">
+                <BackButton onClick={this.handleBackToHintClick} />
               </div>
             </div>
           </div>

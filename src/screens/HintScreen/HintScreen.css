@@ -67,11 +67,3 @@
   display: inline-block;
   margin: auto;
 }
-
-.cls-1 {
-  fill: none;
-  stroke: #ff7661 !important;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2px;
-}

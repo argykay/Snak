@@ -1,15 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Code|Rubik&display=swap");
 
+.stickToBottom {
+  bottom: 10px;
+  left: 10px;
+  position: fixed;
+  display: block;
+}
+
 .button-back {
   width: 2.5rem;
   height: 2.5rem;
   background: #334c66;
   border-radius: 50%;
   text-align: center;
-  position: absolute;
-  bottom: 10px;
+  position: relative;
   left: 10px;
   border: none;
+  bottom: 10px;
+  display: inline-block;
 }
 
 .button-back-text {

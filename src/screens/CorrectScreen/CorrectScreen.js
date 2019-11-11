@@ -3,11 +3,21 @@ import "./CorrectScreen.css";
 import EndScreen from "../EndScreen/EndScreen";
 
 class CorrectScreen extends Component {
-  handleEnd() {
-    return <EndScreen />;
+  constructor(props) {
+    super(props);
+    this.state = {
+      endGame: false
+    };
   }
 
+  handleEnd = () => {
+    this.setState({ endGame: true });
+  };
+
   render() {
+    if (this.state.endGame === true) {
+      return <EndScreen />;
+    }
     return (
       <div>
         <div className="background">
