@@ -25,7 +25,7 @@ class App extends Component {
       }
     });
   }
-
+/*
   registerUser = fullName => {
     firebase.auth().onAuthStateChanged(FBUser => {
       FBUser.updateProfile({
@@ -38,7 +38,7 @@ class App extends Component {
         });
       });
     });
-  };
+  };*/
 
   render() {
     return <StartScreen />;
