@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Code|Rubik&display=swap");
+
+.body-text {
+  color: #ff7661;
+  font-family: fira code;
+  font-weight: medium;
+}

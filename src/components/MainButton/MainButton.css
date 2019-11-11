@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Code|Rubik&display=swap");
+
+.button-main {
+  border: none;
+  margin: auto;
+  padding: 18px;
+  margin-top: 12px;
+  border-radius: 30px;
+  width: 220px;
+}
+
+.button-text {
+  font-weight: bold;
+  font-family: fira code;
+  font-size: 22px;
+  margin-top: 80px;
+}
+
+.button-orange-background {
+  color: #ff7661;
+}
+
+.button-greyblue-background {
+  color: #25465d;
+}
+
+.button-blue-text {
+  color: #012a46;
+}
+
+.button-orange-text {
+  color: #ff7661;
+}

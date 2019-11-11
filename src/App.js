@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import firebase from "./Firebase";
+import WrongAnswer from "./screens/WrongAnswer";
 
 import "./App.css";
 import StartScreen from "./screens/StartScreen";
@@ -41,7 +42,7 @@ class App extends Component {
   };
 
   render() {
-    return <StartScreen />;
+    return <WrongAnswer />;
   }
 }
 
