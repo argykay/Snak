@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ErrorMessage from "../components/ErrorMessage";
-import firebase, { signUpToFirebase } from "../Firebase";
+import firebase  from "../Firebase";
 import BackButton from "../components/BackButton/BackButton";
 import StartScreen from "./StartScreen";
 
@@ -38,31 +38,38 @@ class SignUpScreen extends Component {
       }
     });
   }
-
-  handleSubmit(e) {
-    e.preventDefault();
+  handleSubmit(e){
+    e.preventDefault(); 
     this.firebaseCreateUser();
-    this.setState({ userSignedUp: true });
+    //this.setState({ userSignedUp: true });
   }
 
-  firebaseCreateUser() {
+
+  firebaseCreateUser(){
+   // e.preventDefault();
     let signUpCredentials = {
       fullname: this.state.fullname,
       email: this.state.email,
       password: this.state.password
     };
-    signUpToFirebase(
-      signUpCredentials.email,
-      signUpCredentials.password,
-      signUpCredentials.fullname,
-      error => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(
+        signUpCredentials.email,
+        signUpCredentials.password
+      )
+      .then(() => {
+       // this.props.registerUser(signUpCredentials.fullname);
+        this.setState({ userSignedUp: true });
+      })
+      .catch(error => {
         if (error.message !== null) {
           this.setState({ errorMessage: error.message });
         } else {
           this.setState({ errorMessage: null });
+          this.setState({ userSignedUp: true });
         }
-      }
-    );
+      });
   }
 
   handleBackClick = () => {
@@ -84,10 +91,10 @@ class SignUpScreen extends Component {
     return (
       <div className="main-container">
         <div className="form-container">
-          <form onSubmit={this.handleSubmit}>
-            {this.state.errorMessage !== null ? (
+        {this.state.errorMessage !== null ? (
               <ErrorMessage message={this.state.errorMessage} />
             ) : null}
+          <form onSubmit={this.handleSubmit}>
             <input
               type="text"
               name="fullname"

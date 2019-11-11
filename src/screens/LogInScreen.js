@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import firebase, { loginToFirebase } from "../Firebase";
+import firebase from "../Firebase";
 import ErrorMessage from "../components/ErrorMessage";
 import BackButton from "../components/BackButton/BackButton";
 import StartScreen from "./StartScreen";
@@ -30,26 +30,30 @@ class LogInScreen extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.firebaseLoginUser();
-    this.setState({ userLoggedIn: true });
+  //  this.setState({ userLoggedIn: true });
   }
 
-  firebaseLoginUser() {
+  firebaseLoginUser(){
     let logInCredentials = {
       email: this.state.email,
       password: this.state.password
     };
-    // Firebase authentication
-    loginToFirebase(
-      logInCredentials.email,
-      logInCredentials.password,
-      error => {
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(
+        logInCredentials.email,
+        logInCredentials.password
+      )
+      .then(()=> {
+        this.setState({ userLoggedIn: true });
+    })
+      .catch(error => {
         if (error.message !== null) {
           this.setState({ errorMessage: error.message });
         } else {
           this.setState({ errorMessage: null });
         }
-      }
-    );
+      });
   }
 
   handleBackClick = () => {
