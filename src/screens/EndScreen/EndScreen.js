@@ -7,7 +7,8 @@ class EndScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      BackToHint: false
+      BackToHint: false,
+      hint: this.props.hint
     };
   }
 
