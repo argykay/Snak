@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import "./GameScreen.css";
+import "../HintScreen/HintScreen.css";
 import dataArray from "../../data/dataArray";
 import CorrectScreen from "../CorrectScreen/CorrectScreen";
 import WrongScreen from "../WrongScreen/WrongScreen";
 import HintScreen from "../HintScreen/HintScreen";
 import BackButton from "../../components/BackButton/BackButton";
+import shuffle from "../../utils/shuffle";
 
 class GameScreen extends Component {
   constructor(props) {
@@ -36,7 +38,7 @@ class GameScreen extends Component {
         this.state.dataArray[image2],
         this.state.dataArray[hintId]
       );
-      return this.shuffle(tempArray);
+      return shuffle(tempArray);
     } else {
       return this.getRandomImages();
     }
@@ -44,14 +46,6 @@ class GameScreen extends Component {
 
   getRandomId() {
     return Math.floor(Math.random() * this.state.dataArray.length);
-  }
-
-  shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
   }
 
   addStar() {
@@ -83,13 +77,13 @@ class GameScreen extends Component {
       return <CorrectScreen />;
     }
     if (this.state.wrongAnswer === true) {
-      return <WrongScreen />;
+      return <WrongScreen hint={this.state.hint} />;
     }
     return (
       <div>
         <div className="background">
           <div className="mobile-container">
-            <div className="daily-word">{this.getHintWord()}</div>
+            <div className="screen-title">{this.getHintWord()}</div>
             <div className="gm">
               <div
                 className="game-button"

@@ -47,11 +47,11 @@ class HintScreen extends Component {
     return (
       <div className="background">
         <div className="mobile-container">
-          <div className="page-title">Daily Hint</div>
+          <div className="normal-text">Daily Hint</div>
           <div className="dh-image-bg">
             <div className="dh-image"></div>
             <div>{this.getHint()}</div>
-            <div className="daily-word">{this.getWordDanish()}</div>
+            <h1 className="screen-title">{this.getWordDanish()}</h1>
           </div>
           <button className="main-button" onClick={this.handleStartGameClick}>
             start

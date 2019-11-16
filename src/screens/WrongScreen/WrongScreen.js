@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import "./WrongScreen.css";
+import "../HintScreen/HintScreen.css";
 import HintScreen from "../HintScreen/HintScreen";
+import GameScreen from "../GameScreen/GameScreen";
 
 class WrongScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      BackToHint: false
+      BackToHint: false,
+      hint: this.props.hint
     };
   }
 
@@ -16,7 +19,7 @@ class WrongScreen extends Component {
 
   render() {
     if (this.state.BackToHint === true) {
-      return <HintScreen />;
+      return <GameScreen hint={this.state.hint} />;
     }
     return (
       <div>

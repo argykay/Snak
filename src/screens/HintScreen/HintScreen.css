@@ -17,27 +17,31 @@
   width: 100%;
   height: 100%;
   background-color: #012a46;
-  /*position: relative;*/
   flex-direction: column;
   margin: auto;
 }
 
-.page-title {
+.screen-title {
   color: #ff7661;
   font-family: Rubik;
-  font-size: 16px;
+  font-size: 30px;
   text-align: center;
   width: 100%;
-  padding-top: 40px;
+  position: relative;
 }
 
-.daily-word {
-  color: #ff7661;
-  font-family: Rubik;
-  font-size: 26px;
+.normal-text {
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  align-items: center;
   text-align: center;
-  width: 100%;
-  padding-top: 60px;
+  color: #ff7661;
+  padding-top: 25px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .main-button {
@@ -53,12 +57,13 @@
   margin: auto;
 }
 
+/* keep only from here and under */
+
 .dh-image-bg {
   background-color: #25465d;
   width: 100%;
-  height: 450px;
+  height: 400px;
   margin: auto;
-  margin-top: 40px;
   margin-bottom: 0px;
 }
 

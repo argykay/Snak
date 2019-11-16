@@ -6,7 +6,8 @@ class CorrectScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      endGame: false
+      endGame: false,
+      hint: this.props.hint
     };
   }
 
@@ -16,7 +17,7 @@ class CorrectScreen extends Component {
 
   render() {
     if (this.state.endGame === true) {
-      return <EndScreen />;
+      return <EndScreen hint={this.state.hint} />;
     }
     return (
       <div>
