@@ -23,23 +23,15 @@ class HintScreen extends Component {
     return <div>{this.state.dataArray[this.state.hint].wordDanish} </div>;
   }
 
-  setHint() {
-    if (this.state.hint < this.state.dataArray.length) {
-      this.setState({ hint: this.state.hint + 1 });
-    } else {
-      return <div>Congratulations! You completed Level 1</div>;
-    }
-  }
-
-  setIsUsed() {
-    this.state.dataArray[this.state.hint].isUsed = true;
-  }
-
   handleStartGameClick = () => {
-    this.setHint();
-    this.setIsUsed();
     this.setState({ startGame: true });
   };
+
+  hasReceivedNext() {
+    if (this.state.nextHint !== null) {
+      return true;
+    } else return false;
+  }
 
   render() {
     if (this.state.startGame === true) {
