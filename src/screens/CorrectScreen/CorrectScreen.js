@@ -6,7 +6,8 @@ class CorrectScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      endGame: false
+      endGame: false,
+      hint: this.props.hint
     };
   }
 
