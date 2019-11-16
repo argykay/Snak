@@ -46,15 +46,19 @@ class LogInScreen extends Component {
       )
       .then(()=> {
         this.setState({ userLoggedIn: true });
-    })
+    }) //The catch will stay, but then take the content of the catch out in a "helper" function and then call that
       .catch(error => {
-        if (error.message !== null) {
-          this.setState({ errorMessage: error.message });
-        } else {
-          this.setState({ errorMessage: null });
-        }
+        this.checkError(error); 
       });
   }
+
+   checkError = (error) => {
+    if (error.message !== null) {
+      this.setState({ errorMessage: error.message });
+    } else {
+      this.setState({ errorMessage: null });
+    }; 
+   }
 
   handleBackClick = () => {
     this.setState({ goBack: true });

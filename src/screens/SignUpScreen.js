@@ -63,14 +63,17 @@ class SignUpScreen extends Component {
         this.setState({ userSignedUp: true });
       })
       .catch(error => {
-        if (error.message !== null) {
-          this.setState({ errorMessage: error.message });
-        } else {
-          this.setState({ errorMessage: null });
-          this.setState({ userSignedUp: true });
-        }
+        this.checkError(error); 
       });
   }
+  checkError = (error) => {
+    if (error.message !== null) {
+      this.setState({ errorMessage: error.message });
+    } else {
+      this.setState({ errorMessage: null });
+    }; 
+   }
+
 
   handleBackClick = () => {
     this.setState({ goBack: true });

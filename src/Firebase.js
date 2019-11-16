@@ -25,29 +25,5 @@ export const provider = new firebase.auth.GoogleAuthProvider();
 // Authentication
 export const auth = firebase.auth();
 
-// Function to logIn
-export const loginToFirebase = (email, password, onError) => {
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .catch(error => {
-      onError(error);
-    });
-};
-
-
-// Function to signUp
-/*
-export const signUpToFirebase = (email, password, fullname ) => {
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then(() => {
-      this.props.registerUser(fullname);
-    })
-    .catch(error => {
-      alert(error);  
-    });
-};*/
 
 export default firebase;
