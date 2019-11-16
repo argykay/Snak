@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Code|Rubik&display=swap");
+
+.overlay {
+  width: 220px;
+  border-radius: 18px;
+  z-index: 1000;
+}
+
+.overlay > img {
+  z-index: -1000;
+}
+
+.dh-image {
+  padding: 10%;
+  display: inline-block;
+  margin: auto;
+}

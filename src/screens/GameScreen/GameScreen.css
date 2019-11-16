@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Code|Rubik&display=swap");
+
+.gm {
+  padding-top: 0;
+  padding: 20px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.game-button {
+  background-color: #25465d;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+img.gm-img {
+  width: 110px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 20px;
+}
