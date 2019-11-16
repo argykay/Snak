@@ -35,14 +35,14 @@ class HintScreen extends Component {
   }
 
   handleStartGameClick = () => {
-    this.setState({ startGame: true });
     this.setHint();
     this.setIsUsed();
+    this.setState({ startGame: true });
   };
 
   render() {
     if (this.state.startGame === true) {
-      return <GameScreen hint={this.state.hint - 1} />;
+      return <GameScreen hint={this.state.hint} />;
     }
     return (
       <div className="background">
