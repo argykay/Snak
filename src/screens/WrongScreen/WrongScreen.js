@@ -1,12 +1,15 @@
 import React, { Component } from "react";
+import "../../styling/generic.css";
 import "./WrongScreen.css";
-import HintScreen from "../HintScreen/HintScreen";
+import "../HintScreen/HintScreen.css";
+import GameScreen from "../GameScreen/GameScreen";
 
 class WrongScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      BackToHint: false
+      BackToHint: false,
+      hint: this.props.hint
     };
   }
 
@@ -16,23 +19,29 @@ class WrongScreen extends Component {
 
   render() {
     if (this.state.BackToHint === true) {
-      return <HintScreen />;
+      return <GameScreen hint={this.state.hint} />;
     }
     return (
       <div>
         <div className="background">
           <div className="mobile-container">
             <div className="center-content">
-              <div className="screen-title">Opps, wrong answer.</div>
-              <div className="normal-text">
-                Hmm...Give it another go to earn a star!
+              <div className="space">
+                <h1 className="screen-title">Opps, wrong answer.</h1>
               </div>
-              <button
-                className="main-button"
-                onClick={this.handleBackToHintClick}
-              >
-                try again
-              </button>
+              <div className="space">
+                <p className="normal-text">
+                  Hmm...Give it another go to earn a star!
+                </p>
+              </div>
+              <div className="space">
+                <button
+                  className="main-button"
+                  onClick={this.handleBackToHintClick}
+                >
+                  try again
+                </button>
+              </div>
             </div>
           </div>
         </div>

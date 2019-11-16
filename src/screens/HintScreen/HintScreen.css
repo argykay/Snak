@@ -1,69 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Code|Rubik&display=swap");
 
-.background {
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  background-color: #012a46;
-  position: relative;
-  display: flex;
-}
-
-.mobile-container {
-  color: #ff7661;
-  font-family: Rubik;
-  display: flex;
-  max-width: 500px;
-  width: 100%;
-  height: 100%;
-  background-color: #012a46;
-  /*position: relative;*/
-  flex-direction: column;
-  margin: auto;
-}
-
-.page-title {
-  color: #ff7661;
-  font-family: Rubik;
-  font-size: 16px;
-  text-align: center;
-  width: 100%;
-  padding-top: 40px;
-}
-
-.daily-word {
-  color: #ff7661;
-  font-family: Rubik;
-  font-size: 26px;
-  text-align: center;
-  width: 100%;
-  padding-top: 60px;
-}
-
-.main-button {
-  background-color: #ff7661;
-  color: #012a46;
-  font-family: Fira Code;
-  font-weight: bold;
-  font-size: 16px;
-  text-align: center;
-  width: 30%;
-  border-radius: 50px;
-  border-color: transparent;
-  margin: auto;
+.dh-p {
+  margin-top: 10%;
+  margin-bottom: 0;
 }
 
 .dh-image-bg {
   background-color: #25465d;
   width: 100%;
-  height: 450px;
+  height: 400px;
   margin: auto;
-  margin-top: 40px;
   margin-bottom: 0px;
 }
 
 .dh-image {
-  padding: 10%;
   display: inline-block;
   margin: auto;
+  width: auto;
+  height: auto;
 }
