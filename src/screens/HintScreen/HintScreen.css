@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Code|Rubik&display=swap");
 
+.dh-p {
+  margin-top: 10%;
+  margin-bottom: 0;
+}
+
 .dh-image-bg {
   background-color: #25465d;
   width: 100%;
@@ -9,7 +14,8 @@
 }
 
 .dh-image {
-  padding: 10%;
   display: inline-block;
   margin: auto;
+  width: auto;
+  height: auto;
 }

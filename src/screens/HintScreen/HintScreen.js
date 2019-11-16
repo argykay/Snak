@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../../styling/generic.css";
 import "./HintScreen.css";
 
 import dataArray from "../../data/dataArray";
@@ -14,7 +15,7 @@ class HintScreen extends Component {
     };
   }
 
-  getHint() {
+  getHintImg() {
     return <img width="200" src={dataArray[this.state.hint].svg}></img>;
   }
 
@@ -47,11 +48,14 @@ class HintScreen extends Component {
     return (
       <div className="background">
         <div className="mobile-container">
-          <div className="normal-text">Daily Hint</div>
+          <div className="dh-p">
+            <p className="normal-text">Daily Hint</p>
+          </div>
           <div className="dh-image-bg">
-            <div className="dh-image"></div>
-            <div>{this.getHint()}</div>
-            <h1 className="screen-title">{this.getWordDanish()}</h1>
+            <div className="dh-image">
+              <div>{this.getHintImg()}</div>
+              <h1 className="screen-title">{this.getWordDanish()}</h1>
+            </div>
           </div>
           <button className="main-button" onClick={this.handleStartGameClick}>
             start
