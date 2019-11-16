@@ -9,7 +9,6 @@ class HintScreen extends Component {
     super(props);
     this.state = {
       dataArray: dataArray,
-      hint: 0,
       startGame: false
     };
   }
@@ -26,15 +25,9 @@ class HintScreen extends Component {
     this.setState({ startGame: true });
   };
 
-  hasReceivedNext() {
-    if (this.state.nextHint !== null) {
-      return true;
-    } else return false;
-  }
-
   render() {
     if (this.state.startGame === true) {
-      return <GameScreen hint={this.state.hint} />;
+      return <GameScreen hint={this.props.hint ? this.props.hint : 0} />;
     }
     return (
       <div className="background">
@@ -43,10 +36,23 @@ class HintScreen extends Component {
             <p className="normal-text">Daily Hint</p>
           </div>
           <div className="dh-image-bg">
-            <div className="dh-image">
-              <div>{this.getHintImg()}</div>
-              <h1 className="screen-title">{this.getWordDanish()}</h1>
+
+            <div className="dh-image"></div>
+            <div>
+              {this.props.hint ? (
+                <img width="200" src={dataArray[this.props.hint].svg}></img>
+              ) : (
+                <img width="200" src={dataArray[0].svg}></img>
+              )}
             </div>
+            <h1 className="screen-title">
+              {this.props.hint ? (
+                <div>{this.state.dataArray[this.props.hint].wordDanish} </div>
+              ) : (
+                <div>{this.state.dataArray[0].wordDanish} </div>
+              )}
+            </h1>
+
           </div>
           <button className="main-button" onClick={this.handleStartGameClick}>
             start

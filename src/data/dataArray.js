@@ -2,64 +2,64 @@ export const dataArray = [
   {
     id: "0",
     svg: "./images/book.svg",
-    wordDanish: "bog",
-    wordEnglish: "book",
+    wordDanish: "Bog",
+    wordEnglish: "Book",
     isUsed: false
   },
   {
     id: "1",
     svg: "./images/ruler.svg",
-    wordDanish: "lineal",
-    wordEnglish: "ruler",
+    wordDanish: "Lineal",
+    wordEnglish: "Ruler",
     isUsed: false
   },
   {
     id: "2",
     svg: "./images/notes.svg",
-    wordDanish: "noter",
-    wordEnglish: "notes",
+    wordDanish: "Noter",
+    wordEnglish: "Notes",
     isUsed: false
   },
   {
     id: "3",
     svg: "./images/lecture.svg",
-    wordDanish: "forelæsning",
-    wordEnglish: "lecture",
+    wordDanish: "Forelæsning",
+    wordEnglish: "Lecture",
     isUsed: false
   },
   {
     id: "4",
     svg: "./images/pencil.svg",
-    wordDanish: "blyant",
-    wordEnglish: "pencil",
+    wordDanish: "Blyant",
+    wordEnglish: "Pencil",
     isUsed: false
   },
   {
     id: "5",
     svg: "./images/university.svg",
-    wordDanish: "universitet",
-    wordEnglish: "university",
+    wordDanish: "Universitet",
+    wordEnglish: "University",
     isUsed: false
   },
   {
     id: "6",
     svg: "./images/lunch.svg",
-    wordDanish: "frokost",
-    wordEnglish: "lunch",
+    wordDanish: "Frokost",
+    wordEnglish: "Lunch",
     isUsed: false
   },
   {
     id: "7",
     svg: "./images/schedule.svg",
-    wordDanish: "skema",
-    wordEnglish: "schedule",
+    wordDanish: "Skema",
+    wordEnglish: "Schedule",
     isUsed: false
   },
   {
     id: "8",
     svg: "./images/blackboard.svg",
-    wordDanish: "tavle",
-    wordEnglish: "blackboard",
+    wordDanish: "Tavle",
+    wordEnglish: "Blackboard",
     isUsed: false
   },
   {
@@ -72,22 +72,22 @@ export const dataArray = [
   {
     id: "10",
     svg: "./images/student.svg",
-    wordDanish: "studerende",
-    wordEnglish: "student",
+    wordDanish: "Studerende",
+    wordEnglish: "Student",
     isUsed: false
   },
   {
     id: "11",
     svg: "./images/library.svg",
-    wordDanish: "bibliotek",
-    wordEnglish: "library",
+    wordDanish: "Bibliotek",
+    wordEnglish: "Library",
     isUsed: false
   },
   {
     id: "12",
     svg: "./images/coffee.svg",
-    wordDanish: "kaffe",
-    wordEnglish: "coffee",
+    wordDanish: "Kaffe",
+    wordEnglish: "Coffee",
     isUsed: false
   }
 ];

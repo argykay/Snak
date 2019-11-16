@@ -19,7 +19,7 @@ class EndScreen extends Component {
 
   render() {
     if (this.state.BackToHint === true) {
-      return <HintScreen />;
+      return <HintScreen hint={this.state.hint + 1} />;
     }
     return (
       <div>

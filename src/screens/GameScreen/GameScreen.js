@@ -14,7 +14,6 @@ class GameScreen extends Component {
     this.state = {
       dataArray: dataArray,
       hint: this.props.hint,
-      //stars: this.props.stars,
       correctAnswer: false,
       wrongAnswer: false,
       BackToHint: false
@@ -55,12 +54,10 @@ class GameScreen extends Component {
   handleImageClick(id) {
     let hintId = this.state.dataArray[this.state.hint].id;
     if (id === hintId) {
-      console.log("correct!");
       this.addStar();
       this.setState({ correctAnswer: true });
     } else {
       this.setState({ wrongAnswer: true });
-      console.log("wrong!");
     }
   }
 
@@ -69,6 +66,8 @@ class GameScreen extends Component {
   };
 
   render() {
+    console.log(this.state.hint);
+
     let array = this.getRandomImages();
     if (this.state.BackToHint === true) {
       return <HintScreen />;
