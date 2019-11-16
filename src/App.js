@@ -27,7 +27,7 @@ class App extends Component {
       }
     });
   }
-/*
+  /*
   registerUser = fullName => {
     firebase.auth().onAuthStateChanged(FBUser => {
       FBUser.updateProfile({
@@ -46,8 +46,7 @@ class App extends Component {
     //console.log(this.state);
     return (
       <div className="main-container">
-        <HintScreen />
-        {/* <StartScreen /> */}
+        <StartScreen />
       </div>
     );
   }

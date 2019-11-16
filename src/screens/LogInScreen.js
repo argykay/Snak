@@ -3,6 +3,7 @@ import firebase from "../Firebase";
 import ErrorMessage from "../components/ErrorMessage";
 import BackButton from "../components/BackButton/BackButton";
 import StartScreen from "./StartScreen";
+import HintScreen from "./HintScreen/HintScreen";
 
 class LogInScreen extends Component {
   constructor(props) {
@@ -30,10 +31,10 @@ class LogInScreen extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.firebaseLoginUser();
-  //  this.setState({ userLoggedIn: true });
+    //  this.setState({ userLoggedIn: true });
   }
 
-  firebaseLoginUser(){
+  firebaseLoginUser() {
     let logInCredentials = {
       email: this.state.email,
       password: this.state.password
@@ -44,21 +45,21 @@ class LogInScreen extends Component {
         logInCredentials.email,
         logInCredentials.password
       )
-      .then(()=> {
+      .then(() => {
         this.setState({ userLoggedIn: true });
-    }) //The catch will stay, but then take the content of the catch out in a "helper" function and then call that
+      }) //The catch will stay, but then take the content of the catch out in a "helper" function and then call that
       .catch(error => {
-        this.checkError(error); 
+        this.checkError(error);
       });
   }
 
-   checkError = (error) => {
+  checkError = error => {
     if (error.message !== null) {
       this.setState({ errorMessage: error.message });
     } else {
       this.setState({ errorMessage: null });
-    }; 
-   }
+    }
+  };
 
   handleBackClick = () => {
     this.setState({ goBack: true });
@@ -66,7 +67,7 @@ class LogInScreen extends Component {
 
   render() {
     if (this.state.userLoggedIn === true) {
-      return <p>user is logged in</p>;
+      return <HintScreen />;
     }
     if (this.state.goBack === true) {
       return <StartScreen />;
