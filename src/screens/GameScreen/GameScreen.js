@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./GameScreen.css";
-import "../HintScreen/HintScreen.css";
+import "../../styling/generic.css";
 import dataArray from "../../data/dataArray";
 import CorrectScreen from "../CorrectScreen/CorrectScreen";
 import WrongScreen from "../WrongScreen/WrongScreen";
@@ -82,7 +82,7 @@ class GameScreen extends Component {
       <div>
         <div className="background">
           <div className="mobile-container">
-            <div className="screen-title">{this.getHintWord()}</div>
+            <h1 className="screen-title">{this.getHintWord()}</h1>
             <div className="gm">
               <div
                 className="game-button"

@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Code|Rubik&display=swap");
 
 .gm {
+  padding-top: 0;
   padding: 20px;
   text-align: center;
+  margin-top: 0;
 }
 
 .game-button {

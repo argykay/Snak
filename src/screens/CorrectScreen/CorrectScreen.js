@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../../styling/generic.css";
 import "./CorrectScreen.css";
 import EndScreen from "../EndScreen/EndScreen";
 
@@ -23,13 +24,13 @@ class CorrectScreen extends Component {
       <div>
         <div className="background">
           <div className="mobile-container">
-            <div className="screen-title">Good job!</div>
-            <div className="normal-text">
+            <h1 className="screen-title">Good job!</h1>
+            <p className="normal-text">
               You’ve earned a star. The danes are proud of you!
-            </div>
-            <div className="normal-text">Total Stars:</div>
+            </p>
+            <p className="normal-text">Total Stars:</p>
             <div>
-              <img className="dh-image" src="./../images/star.svg" />
+              <img className="star-image" src="./../images/star.svg" />
             </div>
             <button className="main-button" onClick={this.handleEnd}>
               continue
