@@ -48,7 +48,7 @@ class GameScreen extends Component {
   }
 
   addStar() {
-    console.log("a star should be added");
+    console.log("add star");
   }
 
   handleImageClick(id) {
