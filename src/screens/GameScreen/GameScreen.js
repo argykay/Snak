@@ -7,8 +7,8 @@ import WrongScreen from "../WrongScreen/WrongScreen";
 import HintScreen from "../HintScreen/HintScreen";
 import BackButton from "../../components/BackButton/BackButton";
 import shuffle from "../../utils/shuffle";
+import Star from "../../components/Star/Star";
 
-// can i push?
 class GameScreen extends Component {
   constructor(props) {
     super(props);
@@ -48,14 +48,14 @@ class GameScreen extends Component {
     return Math.floor(Math.random() * this.state.dataArray.length);
   }
 
-  addStar() {
-    console.log("add star!");
+  setIsUsed() {
+    this.state.dataArray[this.state.hint].isUsed = true;
   }
 
   handleImageClick(id) {
     let hintId = this.state.dataArray[this.state.hint].id;
     if (id === hintId) {
-      this.addStar();
+      this.setIsUsed();
       this.setState({ correctAnswer: true });
     } else {
       this.setState({ wrongAnswer: true });
@@ -67,8 +67,6 @@ class GameScreen extends Component {
   };
 
   render() {
-    console.log(this.state.hint);
-
     let array = this.getRandomImages();
     if (this.state.BackToHint === true) {
       return <HintScreen />;
@@ -83,6 +81,7 @@ class GameScreen extends Component {
       <div>
         <div className="background">
           <div className="mobile-container">
+            <Star />
             <h1 className="screen-title">{this.getHintWord()}</h1>
             <div className="gm">
               <div

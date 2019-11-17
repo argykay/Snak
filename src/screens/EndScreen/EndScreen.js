@@ -3,6 +3,7 @@ import "../../styling/generic.css";
 import "./EndScreen.css";
 import HintScreen from "../HintScreen/HintScreen";
 import BackButton from "../../components/BackButton/BackButton";
+import Star from "../../components/Star/Star";
 
 class EndScreen extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class EndScreen extends Component {
       <div>
         <div className="background">
           <div className="mobile-container">
+            <Star />
             <h1 className="screen-title">“Godt gået!”</h1>
             <p className="normal-text">as the Danes would say it.</p>
             <div className="dh-image">

@@ -27,6 +27,7 @@ class App extends Component {
       }
     });
   }
+
   /*
   registerUser = fullName => {
     firebase.auth().onAuthStateChanged(FBUser => {
@@ -43,10 +44,10 @@ class App extends Component {
   };*/
 
   render() {
-    //console.log(this.state);
     return (
       <div className="main-container">
-        <StartScreen />
+        {/*<StartScreen />*/}
+        <HintScreen />
       </div>
     );
   }
