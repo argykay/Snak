@@ -3,6 +3,7 @@ import "../../styling/generic.css";
 import "./WrongScreen.css";
 import "../HintScreen/HintScreen.css";
 import GameScreen from "../GameScreen/GameScreen";
+import Star from "../../components/Star/Star";
 
 class WrongScreen extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class WrongScreen extends Component {
       <div>
         <div className="background">
           <div className="mobile-container">
+            <Star />
             <div className="center-content">
               <div className="space">
                 <h1 className="screen-title">Opps, wrong answer.</h1>

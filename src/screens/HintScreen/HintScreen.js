@@ -3,6 +3,7 @@ import "../../styling/generic.css";
 import "./HintScreen.css";
 import dataArray from "../../data/dataArray";
 import GameScreen from "../GameScreen/GameScreen";
+import Star from "../../components/Star/Star";
 
 class HintScreen extends Component {
   constructor(props) {
@@ -32,11 +33,11 @@ class HintScreen extends Component {
     return (
       <div className="background">
         <div className="mobile-container">
+          <Star />
           <div className="dh-p">
             <p className="normal-text">Daily Hint</p>
           </div>
           <div className="dh-image-bg">
-
             <div className="dh-image"></div>
             <div>
               {this.props.hint ? (
@@ -52,7 +53,6 @@ class HintScreen extends Component {
                 <div>{this.state.dataArray[0].wordDanish} </div>
               )}
             </h1>
-
           </div>
           <button className="main-button" onClick={this.handleStartGameClick}>
             start

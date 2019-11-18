@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../../styling/generic.css";
 import "./CorrectScreen.css";
 import EndScreen from "../EndScreen/EndScreen";
+import Star from "../../components/Star/Star";
 
 class CorrectScreen extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class CorrectScreen extends Component {
       <div>
         <div className="background">
           <div className="mobile-container">
+            <Star />
             <h1 className="screen-title">Good job!</h1>
             <p className="normal-text">
               You’ve earned a star. The danes are proud of you!
