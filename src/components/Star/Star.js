@@ -4,7 +4,14 @@ import "./Star.css";
 
 class Star extends Component {
   render() {
-    return <div>{getStars()}</div>;
+    return (
+      <div className="star">
+        <div className="littleStar">
+          <img src="./../images/star_icon.svg" />
+        </div>
+        <div className="starCount">{getStars()}</div>
+      </div>
+    );
   }
 }
 export default Star;
