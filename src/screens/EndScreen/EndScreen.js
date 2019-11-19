@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import "../../styling/generic.css";
-import "./EndScreen.css";
+
 import HintScreen from "../HintScreen/HintScreen";
 import BackButton from "../../components/BackButton/BackButton";
 import Star from "../../components/Star/Star";
+import "../../styling/generic.css";
+import "./EndScreen.css";
 
 class EndScreen extends Component {
   constructor(props) {

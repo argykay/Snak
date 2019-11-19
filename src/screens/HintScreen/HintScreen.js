@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import "../../styling/generic.css";
-import "./HintScreen.css";
+
 import dataArray from "../../data/dataArray";
 import GameScreen from "../GameScreen/GameScreen";
 import Star from "../../components/Star/Star";
+import "../../styling/generic.css";
+import "./HintScreen.css";
 
 class HintScreen extends Component {
   constructor(props) {

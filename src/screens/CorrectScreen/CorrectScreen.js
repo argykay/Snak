@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import "../../styling/generic.css";
-import "./CorrectScreen.css";
+
 import EndScreen from "../EndScreen/EndScreen";
 import Star from "../../components/Star/Star";
 import getStars from "../../utils/getStars";
+import "../../styling/generic.css";
+import "./CorrectScreen.css";
 
 class CorrectScreen extends Component {
   constructor(props) {

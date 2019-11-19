@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import getStars from "../../utils/getStars";
+import "./Star.css";
 
 class Star extends Component {
   render() {

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "../../styling/generic.css";
-import "./WrongScreen.css";
-import "../HintScreen/HintScreen.css";
+
 import GameScreen from "../GameScreen/GameScreen";
 import Star from "../../components/Star/Star";
+import "../../styling/generic.css";
+import "./WrongScreen.css";
 
 class WrongScreen extends Component {
   constructor(props) {

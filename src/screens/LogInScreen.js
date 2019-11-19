@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+
 import firebase from "../Firebase";
-import ErrorMessage from "../components/ErrorMessage";
+import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 import BackButton from "../components/BackButton/BackButton";
 import StartScreen from "./StartScreen";
 import HintScreen from "./HintScreen/HintScreen";

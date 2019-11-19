@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import "./GameScreen.css";
-import "../../styling/generic.css";
+
 import dataArray from "../../data/dataArray";
 import CorrectScreen from "../CorrectScreen/CorrectScreen";
 import WrongScreen from "../WrongScreen/WrongScreen";
 import HintScreen from "../HintScreen/HintScreen";
 import BackButton from "../../components/BackButton/BackButton";
-import shuffle from "../../utils/shuffle";
 import Star from "../../components/Star/Star";
+import shuffle from "../../utils/shuffle";
+import "./GameScreen.css";
+import "../../styling/generic.css";
 
 class GameScreen extends Component {
   constructor(props) {
