@@ -31,6 +31,13 @@ class HintScreen extends Component {
     if (this.state.startGame === true) {
       return <GameScreen hint={this.props.hint ? this.props.hint : 0} />;
     }
+    if (this.props.hint === 13) {
+      return (
+        <div>
+          <p>Level 1 Completed</p>
+        </div>
+      );
+    }
     return (
       <div className="background">
         <div className="mobile-container">
