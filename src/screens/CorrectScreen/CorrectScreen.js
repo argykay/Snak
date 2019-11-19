@@ -3,6 +3,7 @@ import "../../styling/generic.css";
 import "./CorrectScreen.css";
 import EndScreen from "../EndScreen/EndScreen";
 import Star from "../../components/Star/Star";
+import getStars from "../../utils/getStars";
 
 class CorrectScreen extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class CorrectScreen extends Component {
             <p className="normal-text">
               You’ve earned a star. The danes are proud of you!
             </p>
-            <p className="normal-text">Total Stars:</p>
+            <p className="normal-text">Total Stars: {getStars()}</p>
             <div>
               <img className="star-image" src="./../images/star.svg" />
             </div>
