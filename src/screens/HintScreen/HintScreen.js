@@ -15,16 +15,16 @@ class HintScreen extends Component {
     };
   }
 
-  getHintImg() {
-    return <img width="200" src={dataArray[this.state.hint].svg}></img>;
-  }
-
-  getWordDanish() {
-    return <div>{this.state.dataArray[this.state.hint].wordDanish} </div>;
-  }
-
   handleStartGameClick = () => {
     this.setState({ startGame: true });
+  };
+
+  play = () => {
+    {
+      this.props.hint
+        ? this.state.dataArray[this.props.hint].pronounciation.play()
+        : this.state.dataArray[0].pronounciation.play();
+    }
   };
 
   render() {
@@ -41,11 +41,13 @@ class HintScreen extends Component {
     return (
       <div className="background">
         <div className="mobile-container">
-          <Star />
+          <div>
+            <Star />
+          </div>
           <div className="dh-p">
             <p className="normal-text">Daily Hint</p>
           </div>
-          <div className="dh-image-bg">
+          <div className="dh-image-bg" onClick={this.play}>
             <div className="dh-image"></div>
             <div>
               {this.props.hint ? (
@@ -54,6 +56,7 @@ class HintScreen extends Component {
                 <img width="200" src={dataArray[0].svg}></img>
               )}
             </div>
+
             <h1 className="screen-title">
               {this.props.hint ? (
                 <div>{this.state.dataArray[this.props.hint].wordDanish} </div>
