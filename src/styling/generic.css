@@ -26,6 +26,7 @@ h1,
   margin-top: 0;
   margin-bottom: 0;
   font-weight: normal;
+  display: inline-block;
 }
 
 .screen-title {
@@ -35,7 +36,7 @@ h1,
   text-align: center;
   width: 100%;
   position: relative;
-  padding-top: 60px;
+  padding-top: 1vh;
 }
 
 p,
