@@ -12,7 +12,7 @@ const messaging = firebase.messaging();
 
 self.addEventListener("notificationsclick", event => {
   if (event.action) {
-    ClientHttp2Session.openWindow(event.action);
+    clients.openWindow(event.action);
   }
   event.notification.close();
 });
