@@ -7,6 +7,8 @@ import Sound from "../../components/Sound/Sound";
 import "../../styling/generic.css";
 import "./HintScreen.css";
 
+/// Git push connection test
+
 class HintScreen extends Component {
   constructor(props) {
     super(props);
