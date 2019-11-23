@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import dataArray from "../../data/dataArray";
 import GameScreen from "../GameScreen/GameScreen";
 import Star from "../../components/Star/Star";
+import Sound from "../../components/Sound/Sound";
 import "../../styling/generic.css";
 import "./HintScreen.css";
 
@@ -47,23 +48,26 @@ class HintScreen extends Component {
           <div className="dh-p">
             <p className="normal-text">Daily Hint</p>
           </div>
-          <div className="dh-image-bg" onClick={this.play}>
-            <div className="dh-image"></div>
-            <div>
+          <div className="dh-image-bg">
+            <div className="dh-image">
               {this.props.hint ? (
                 <img width="200" src={dataArray[this.props.hint].svg}></img>
               ) : (
                 <img width="200" src={dataArray[0].svg}></img>
               )}
             </div>
-
-            <h1 className="screen-title">
-              {this.props.hint ? (
-                <div>{this.state.dataArray[this.props.hint].wordDanish} </div>
-              ) : (
-                <div>{this.state.dataArray[0].wordDanish} </div>
-              )}
-            </h1>
+          </div>
+          <div className="wrapper">
+            <div className="wrapper-word">
+              <h1 className="screen-title">
+                {this.props.hint ? (
+                  <div>{this.state.dataArray[this.props.hint].wordDanish} </div>
+                ) : (
+                  <div>{this.state.dataArray[0].wordDanish} </div>
+                )}
+              </h1>
+            </div>
+            <Sound hint={this.props.hint} />
           </div>
           <button className="main-button" onClick={this.handleStartGameClick}>
             start
