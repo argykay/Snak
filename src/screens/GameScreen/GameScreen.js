@@ -29,6 +29,10 @@ class GameScreen extends Component {
     return <div>{this.state.dataArray[this.state.hint].wordDanish} </div>;
   }
 
+  getEnglishWord() {
+    return <div>{this.state.dataArray[this.state.hint].wordEnglish} </div>;
+  }
+
   getRandomImages() {
     let image1 = this.state.dataArray[this.getRandomId()].id;
     let image2 = this.state.dataArray[this.getRandomId()].id;
@@ -85,8 +89,9 @@ class GameScreen extends Component {
           <div className="mobile-container">
             <Star />
             <div>
-              <h1 className="screen-title">{this.getHintWord()}</h1>
               <Sound hint={this.props.hint} />
+              <h1 className="screen-title">{this.getHintWord()}</h1>
+              <p className="normal-text">{this.getEnglishWord()}</p>
             </div>
 
             <div className="gm">
