@@ -75,7 +75,7 @@ class GameScreen extends Component {
   render() {
     let array = this.getRandomImages();
     if (this.state.BackToHint === true) {
-      return <HintScreen />;
+      return <HintScreen hint={this.props.hint} />;
     }
     if (this.state.correctAnswer === true) {
       return <CorrectScreen hint={this.state.hint} />;
