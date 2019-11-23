@@ -6,6 +6,7 @@ import WrongScreen from "../WrongScreen/WrongScreen";
 import HintScreen from "../HintScreen/HintScreen";
 import BackButton from "../../components/BackButton/BackButton";
 import Star from "../../components/Star/Star";
+import Sound from "../../components/Sound/Sound";
 import shuffle from "../../utils/shuffle";
 import "./GameScreen.css";
 import "../../styling/generic.css";
@@ -67,10 +68,14 @@ class GameScreen extends Component {
     this.setState({ BackToHint: true });
   };
 
+  play = () => {
+    this.state.dataArray[this.props.hint].pronounciation.play();
+  };
+
   render() {
     let array = this.getRandomImages();
     if (this.state.BackToHint === true) {
-      return <HintScreen />;
+      return <HintScreen hint={this.props.hint} />;
     }
     if (this.state.correctAnswer === true) {
       return <CorrectScreen hint={this.state.hint} />;
@@ -83,7 +88,11 @@ class GameScreen extends Component {
         <div className="background">
           <div className="mobile-container">
             <Star />
-            <h1 className="screen-title">{this.getHintWord()}</h1>
+            <div>
+              <h1 className="screen-title">{this.getHintWord()}</h1>
+              <Sound hint={this.props.hint} />
+            </div>
+
             <div className="gm">
               <div
                 className="game-button"

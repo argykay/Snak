@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import dataArray from "../../data/dataArray";
 import GameScreen from "../GameScreen/GameScreen";
 import Star from "../../components/Star/Star";
+import Sound from "../../components/Sound/Sound";
 import "../../styling/generic.css";
 import "./HintScreen.css";
 
@@ -15,16 +16,16 @@ class HintScreen extends Component {
     };
   }
 
-  getHintImg() {
-    return <img width="200" src={dataArray[this.state.hint].svg}></img>;
-  }
-
-  getWordDanish() {
-    return <div>{this.state.dataArray[this.state.hint].wordDanish} </div>;
-  }
-
   handleStartGameClick = () => {
     this.setState({ startGame: true });
+  };
+
+  play = () => {
+    {
+      this.props.hint
+        ? this.state.dataArray[this.props.hint].pronounciation.play()
+        : this.state.dataArray[0].pronounciation.play();
+    }
   };
 
   render() {
@@ -41,26 +42,32 @@ class HintScreen extends Component {
     return (
       <div className="background">
         <div className="mobile-container">
-          <Star />
+          <div>
+            <Star />
+          </div>
           <div className="dh-p">
             <p className="normal-text">Daily Hint</p>
           </div>
           <div className="dh-image-bg">
-            <div className="dh-image"></div>
-            <div>
+            <div className="dh-image">
               {this.props.hint ? (
                 <img width="200" src={dataArray[this.props.hint].svg}></img>
               ) : (
                 <img width="200" src={dataArray[0].svg}></img>
               )}
             </div>
-            <h1 className="screen-title">
-              {this.props.hint ? (
-                <div>{this.state.dataArray[this.props.hint].wordDanish} </div>
-              ) : (
-                <div>{this.state.dataArray[0].wordDanish} </div>
-              )}
-            </h1>
+          </div>
+          <div className="wrapper">
+            <div className="wrapper-word">
+              <h1 className="screen-title">
+                {this.props.hint ? (
+                  <div>{this.state.dataArray[this.props.hint].wordDanish} </div>
+                ) : (
+                  <div>{this.state.dataArray[0].wordDanish} </div>
+                )}
+              </h1>
+            </div>
+            <Sound hint={this.props.hint} />
           </div>
           <button className="main-button" onClick={this.handleStartGameClick}>
             start
