@@ -74,7 +74,7 @@ class GameScreen extends Component {
       return <HintScreen hint={this.props.hint} />;
     }
     if (this.state.correctAnswer === true) {
-      return <CorrectScreen hint={this.state.hint} />;
+      return <CorrectScreen hint={this.state.hint} trial={this.props.trial} />;
     }
     if (this.state.wrongAnswer === true) {
       return <WrongScreen hint={this.state.hint} />;
