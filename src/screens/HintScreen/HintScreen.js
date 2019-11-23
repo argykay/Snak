@@ -7,7 +7,6 @@ import Sound from "../../components/Sound/Sound";
 import "../../styling/generic.css";
 import "./HintScreen.css";
 
-/// Git push connection test
 
 class HintScreen extends Component {
   constructor(props) {
@@ -47,17 +46,13 @@ class HintScreen extends Component {
           <div>
             <Star />
           </div>
-          <div className="dh-p">
             <p className="normal-text">Daily Hint</p>
-          </div>
-          <div className="dh-image-bg">
-            <div className="dh-image">
+          <div className="dh-image-container">
               {this.props.hint ? (
-                <img width="200" src={dataArray[this.props.hint].svg}></img>
+                <img className="dh-image"  src={dataArray[this.props.hint].svg}></img>
               ) : (
-                <img width="200" src={dataArray[0].svg}></img>
+                <img className="dh-image"  src={dataArray[0].svg}></img>
               )}
-            </div>
           </div>
           <div className="wrapper">
             <div className="wrapper-word">
