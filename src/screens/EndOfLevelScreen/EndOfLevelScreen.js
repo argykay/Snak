@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import HintScreen from "../HintScreen/HintScreen";
+import StartScreen from "../StartScreen";
 import BackButton from "../../components/BackButton/BackButton";
 import Star from "../../components/Star/Star";
 import "../../styling/generic.css";
@@ -21,7 +21,7 @@ class EndOfLevelScreen extends Component {
 
   render() {
     if (this.state.BackToHint === true) {
-      return <HintScreen hint={this.state.hint + 1} />;
+      return <StartScreen />;
     }
     return (
       <div>
