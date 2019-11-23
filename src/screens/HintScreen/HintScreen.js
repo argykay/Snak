@@ -20,14 +20,6 @@ class HintScreen extends Component {
     this.setState({ startGame: true });
   };
 
-  play = () => {
-    {
-      this.props.hint
-        ? this.state.dataArray[this.props.hint].pronounciation.play()
-        : this.state.dataArray[0].pronounciation.play();
-    }
-  };
-
   render() {
     if (this.state.startGame === true) {
       return <GameScreen hint={this.props.hint ? this.props.hint : 0} />;

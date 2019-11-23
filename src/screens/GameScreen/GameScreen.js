@@ -68,10 +68,6 @@ class GameScreen extends Component {
     this.setState({ BackToHint: true });
   };
 
-  play = () => {
-    this.state.dataArray[this.props.hint].pronounciation.play();
-  };
-
   render() {
     let array = this.getRandomImages();
     if (this.state.BackToHint === true) {
