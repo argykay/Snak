@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-
 import dataArray from "../../data/dataArray";
 import GameScreen from "../GameScreen/GameScreen";
+import EndOfLevelScreen from "../EndOfLevelScreen/EndOfLevelScreen";
 import Star from "../../components/Star/Star";
 import Sound from "../../components/Sound/Sound";
 import "../../styling/generic.css";
@@ -30,11 +30,7 @@ class HintScreen extends Component {
       );
     }
     if (this.props.hint === 13) {
-      return (
-        <div>
-          <p>Level 1 Completed</p>
-        </div>
-      );
+      return <EndOfLevelScreen />;
     }
     return (
       <div className="background">
