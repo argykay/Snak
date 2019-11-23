@@ -5,6 +5,7 @@ import Star from "../../components/Star/Star";
 import getStars from "../../utils/getStars";
 import "../../styling/generic.css";
 import "./CorrectScreen.css";
+import TrialScreen from "../TrialScreen/TrialScreen";
 
 class CorrectScreen extends Component {
   constructor(props) {
@@ -22,6 +23,9 @@ class CorrectScreen extends Component {
   render() {
     if (this.state.endGame === true) {
       return <EndScreen hint={this.state.hint} />;
+    }
+    if (this.props.trial === true) {
+      return <TrialScreen />;
     }
     return (
       <div>

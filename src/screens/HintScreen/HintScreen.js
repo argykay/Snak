@@ -22,7 +22,12 @@ class HintScreen extends Component {
 
   render() {
     if (this.state.startGame === true) {
-      return <GameScreen hint={this.props.hint ? this.props.hint : 0} />;
+      return (
+        <GameScreen
+          hint={this.props.hint ? this.props.hint : 0}
+          trial={this.props.trial}
+        />
+      );
     }
     if (this.props.hint === 13) {
       return (
