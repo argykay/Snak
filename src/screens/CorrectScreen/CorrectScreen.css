@@ -5,4 +5,17 @@
   width: 300px;
   display: inline-block;
   margin: auto;
+  animation-iteration-count: 5;
+}
+
+.star {
+  animation-name: twinkle;
+  animation-duration: 1s;
+}
+
+@keyframes twinkle {
+  50% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
 }
