@@ -78,7 +78,7 @@ p,
   width: 300px;
   display: inline-block;
   margin: auto;
-  animation-iteration-count: 5;
+  animation-iteration-count: 3;
 }
 
 .star-twinkle {
