@@ -29,7 +29,10 @@ class TrialScreen extends Component {
             <h1 className="screen-title">That's correct!</h1>
             <p className="normal-text">Sign Up to keep playing!</p>
             <div>
-              <img className="star-image star" src="./../images/star.svg" />
+              <img
+                className="star-image star-twinkle"
+                src="./../images/star.svg"
+              />
             </div>
             <div>
               <button className="main-button" onClick={this.handleClick}>

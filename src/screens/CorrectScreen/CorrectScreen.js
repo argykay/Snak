@@ -38,7 +38,10 @@ class CorrectScreen extends Component {
             </p>
             <p className="normal-text">Total Stars: {getStars()}</p>
             <div>
-              <img className="star-image star" src="./../images/star.svg" />
+              <img
+                className="star-image star-twinkle"
+                src="./../images/star.svg"
+              />
             </div>
             <button className="main-button" onClick={this.handleEnd}>
               continue
