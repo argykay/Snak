@@ -10,6 +10,7 @@ import Sound from "../../components/Sound/Sound";
 import shuffle from "../../utils/shuffle";
 import "./GameScreen.css";
 import "../../styling/generic.css";
+import StartScreen from "../StartScreen";
 
 class GameScreen extends Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class GameScreen extends Component {
       hint: this.props.hint,
       correctAnswer: false,
       wrongAnswer: false,
-      BackToHint: false
+      BackToHint: false,
+      BackToStart: false
     };
 
     this.handleImageClick = this.handleImageClick.bind(this);
@@ -72,15 +74,24 @@ class GameScreen extends Component {
     this.setState({ BackToHint: true });
   };
 
+  handleBackToStartClick = () => {
+    this.setState({ BackToStart: true });
+  };
+
   render() {
     let array = this.getRandomImages();
+
     if (this.state.BackToHint === true) {
       return <HintScreen hint={this.props.hint} />;
     }
+    if (this.state.BackToStart === true) {
+      return <StartScreen />;
+    }
+
     if (this.state.correctAnswer === true) {
       return <CorrectScreen hint={this.state.hint} trial={this.props.trial} />;
     }
-    if (this.state.wrongAnswer === true) {
+    if (this.state.wrongAnswer === true && !this.props.trial) {
       return <WrongScreen hint={this.state.hint} />;
     }
     return (
@@ -120,7 +131,11 @@ class GameScreen extends Component {
                 <img className="gm-img" src={array[2].svg}></img>
               </div>
               <div className="stickToBottom">
-                <BackButton onClick={this.handleBackToHintClick} />
+                {this.props.trial ? (
+                  <BackButton onClick={this.handleBackToStartClick} />
+                ) : (
+                  <BackButton onClick={this.handleBackToHintClick} />
+                )}
               </div>
             </div>
           </div>
