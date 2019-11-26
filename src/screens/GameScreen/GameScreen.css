@@ -1,28 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Code|Rubik&display=swap");
 
-.gm {
-  padding-top: 0;
-  padding: 20px;
-  text-align: center;
-  margin-top: 0;
+.gm{
+  width:100%;
 }
 
 .game-button {
   background-color: #25465d;
-  width: 150px;
-  height: 150px;
+  width: 50%;
   margin: auto;
-  margin-top: 20px;
   border-radius: 10px;
+  margin-bottom: 11px;
 }
 
 img.gm-img {
-  width: 110px;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  padding: 20px;
+  width: 66%;
+  padding: 16px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.screen-title{
+  width:unset; 
+  margin-bottom: 4%;
+  padding-right: 3px;
 }

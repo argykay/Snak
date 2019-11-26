@@ -88,6 +88,8 @@ class GameScreen extends Component {
         <div className="background">
           <div className="mobile-container">
             <Star />
+
+            
             <div>
               <h1 className="screen-title">{this.getHintWord()}</h1>
               <Sound hint={this.props.hint} />
