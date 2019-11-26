@@ -17,6 +17,8 @@
 }
 
 .button-wrapper {
-  padding-top: 7px;
   display: inline-block;
+  position: absolute;
+  top: 49px;
+  margin-left: 4px;
 }

@@ -91,8 +91,8 @@ class GameScreen extends Component {
 
             
             <div>
-              <Sound hint={this.props.hint} />
               <h1 className="screen-title">{this.getHintWord()}</h1>
+              <Sound hint={this.props.hint} />
               <p className="normal-text">{this.getEnglishWord()}</p>
             </div>
 
