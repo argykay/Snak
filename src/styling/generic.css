@@ -61,14 +61,16 @@ p,
 }
 
 .main-button {
-  background-color: #ff7661;
-  color: #012a46;
-  font-family: Fira Code;
-  font-weight: bold;
-  font-size: 16px;
   text-align: center;
-  width: 30%;
-  border-radius: 50px;
-  border-color: transparent;
+  border: none;
   margin: auto;
+  padding: 8px;
+  border-radius: 30px;
+  width: 169px;
+  background: #ff7661;
+  color: #012a46;
+  font-weight: bold;
+  font-family: fira code;
+  font-size: 23px;
+/* margin-top: 37px;*/
 }
