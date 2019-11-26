@@ -5,6 +5,7 @@ import Star from "../../components/Star/Star";
 import getStars from "../../utils/getStars";
 import "../../styling/generic.css";
 import "./CorrectScreen.css";
+import TrialScreen from "../TrialScreen/TrialScreen";
 
 class CorrectScreen extends Component {
   constructor(props) {
@@ -23,6 +24,9 @@ class CorrectScreen extends Component {
     if (this.state.endGame === true) {
       return <EndScreen hint={this.state.hint} />;
     }
+    if (this.props.trial === true) {
+      return <TrialScreen />;
+    }
     return (
       <div>
         <div className="background">
@@ -34,7 +38,10 @@ class CorrectScreen extends Component {
             </p>
             <p className="normal-text">Total Stars: {getStars()}</p>
             <div>
-              <img className="star-image" src="./../images/star.svg" />
+              <img
+                className="star-image star-twinkle"
+                src="./../images/star.svg"
+              />
             </div>
             <button className="main-button" onClick={this.handleEnd}>
               continue

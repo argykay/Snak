@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-
 import dataArray from "../../data/dataArray";
 import GameScreen from "../GameScreen/GameScreen";
+import EndOfLevelScreen from "../EndOfLevelScreen/EndOfLevelScreen";
 import Star from "../../components/Star/Star";
 import Sound from "../../components/Sound/Sound";
 import "../../styling/generic.css";
@@ -21,24 +21,17 @@ class HintScreen extends Component {
     this.setState({ startGame: true });
   };
 
-  play = () => {
-    {
-      this.props.hint
-        ? this.state.dataArray[this.props.hint].pronounciation.play()
-        : this.state.dataArray[0].pronounciation.play();
-    }
-  };
-
   render() {
     if (this.state.startGame === true) {
-      return <GameScreen hint={this.props.hint ? this.props.hint : 0} />;
+      return (
+        <GameScreen
+          hint={this.props.hint ? this.props.hint : 0}
+          trial={this.props.trial}
+        />
+      );
     }
     if (this.props.hint === 13) {
-      return (
-        <div>
-          <p>Level 1 Completed</p>
-        </div>
-      );
+      return <EndOfLevelScreen />;
     }
     return (
       <div className="background">

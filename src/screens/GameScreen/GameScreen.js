@@ -29,6 +29,10 @@ class GameScreen extends Component {
     return <div>{this.state.dataArray[this.state.hint].wordDanish} </div>;
   }
 
+  getEnglishWord() {
+    return <div>{this.state.dataArray[this.state.hint].wordEnglish} </div>;
+  }
+
   getRandomImages() {
     let image1 = this.state.dataArray[this.getRandomId()].id;
     let image2 = this.state.dataArray[this.getRandomId()].id;
@@ -68,17 +72,13 @@ class GameScreen extends Component {
     this.setState({ BackToHint: true });
   };
 
-  play = () => {
-    this.state.dataArray[this.props.hint].pronounciation.play();
-  };
-
   render() {
     let array = this.getRandomImages();
     if (this.state.BackToHint === true) {
       return <HintScreen hint={this.props.hint} />;
     }
     if (this.state.correctAnswer === true) {
-      return <CorrectScreen hint={this.state.hint} />;
+      return <CorrectScreen hint={this.state.hint} trial={this.props.trial} />;
     }
     if (this.state.wrongAnswer === true) {
       return <WrongScreen hint={this.state.hint} />;
@@ -91,8 +91,9 @@ class GameScreen extends Component {
 
             
             <div>
-              <h1 className="screen-title">{this.getHintWord()}</h1>
               <Sound hint={this.props.hint} />
+              <h1 className="screen-title">{this.getHintWord()}</h1>
+              <p className="normal-text">{this.getEnglishWord()}</p>
             </div>
 
             <div className="gm">

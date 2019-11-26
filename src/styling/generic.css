@@ -74,3 +74,23 @@ p,
   font-size: 23px;
 /* margin-top: 37px;*/
 }
+
+.star-image {
+  padding: 10%;
+  width: 300px;
+  display: inline-block;
+  margin: auto;
+  animation-iteration-count: 3;
+}
+
+.star-twinkle {
+  animation-name: twinkle;
+  animation-duration: 1s;
+}
+
+@keyframes twinkle {
+  50% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
