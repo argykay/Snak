@@ -1,30 +1,30 @@
 export const dataArray = [
   {
-    id: "0",
+    id: 0,
     svg: "./images/book.svg",
     wordDanish: "Bog",
     wordEnglish: "Book",
-    isUsed: false,
+    isUsed: true,
     pronounciation: new Audio("./pronounciations/bog.mp3")
   },
   {
-    id: "1",
+    id: 1,
     svg: "./images/ruler.svg",
     wordDanish: "Lineal",
     wordEnglish: "Ruler",
-    isUsed: false,
+    isUsed: true,
     pronounciation: new Audio("./pronounciations/lineal.mp3")
   },
   {
-    id: "2",
+    id: 2,
     svg: "./images/notes.svg",
     wordDanish: "Noter",
     wordEnglish: "Notes",
-    isUsed: false,
+    isUsed: true,
     pronounciation: new Audio("./pronounciations/noter.mp3")
   },
   {
-    id: "3",
+    id: 3,
     svg: "./images/lecture.svg",
     wordDanish: "Forelæsning",
     wordEnglish: "Lecture",
