@@ -6,6 +6,7 @@ import WrongScreen from "../WrongScreen/WrongScreen";
 import HintScreen from "../HintScreen/HintScreen";
 import BackButton from "../../components/BackButton/BackButton";
 import Star from "../../components/Star/Star";
+import WordsButton from "../../components/WordsButton/WordsButton";
 import Sound from "../../components/Sound/Sound";
 import shuffle from "../../utils/shuffle";
 import "./GameScreen.css";
@@ -87,6 +88,7 @@ class GameScreen extends Component {
       <div>
         <div className="background">
           <div className="mobile-container">
+            <WordsButton />
             <Star />
             <div>
               <Sound hint={this.props.hint} />

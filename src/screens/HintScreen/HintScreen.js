@@ -3,6 +3,7 @@ import dataArray from "../../data/dataArray";
 import GameScreen from "../GameScreen/GameScreen";
 import EndOfLevelScreen from "../EndOfLevelScreen/EndOfLevelScreen";
 import Star from "../../components/Star/Star";
+import WordsButton from "../../components/WordsButton/WordsButton";
 import Sound from "../../components/Sound/Sound";
 import "../../styling/generic.css";
 import "./HintScreen.css";
@@ -36,6 +37,7 @@ class HintScreen extends Component {
       <div className="background">
         <div className="mobile-container">
           <div>
+            <WordsButton />
             <Star />
           </div>
           <div className="dh-p">

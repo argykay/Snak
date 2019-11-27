@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import dataArray from "../../data/dataArray";
 import Star from "../../components/Star/Star";
+import BackButton from "../../components/BackButton/BackButton";
+import HintScreen from "../HintScreen/HintScreen";
 import "./ListScreen.css";
 import "../../styling/generic.css";
 
@@ -15,8 +17,15 @@ class ListScreen extends Component {
     return this.state.dataArray.filter(item => item.isUsed == true);
   }
 
+  handleBackToHintClick = () => {
+    this.setState({ BackToHint: true });
+  };
+
   render() {
     console.log(this.getWords());
+    if (this.state.BackToHint === true) {
+      return <HintScreen hint={this.props.hint} />;
+    }
     return (
       <div>
         <div className="background">
@@ -39,6 +48,9 @@ class ListScreen extends Component {
                 ))}
               </tbody>
             </table>
+            <div className="stickToBottom">
+              <BackButton onClick={this.handleBackToHintClick} />
+            </div>
           </div>
         </div>
       </div>
