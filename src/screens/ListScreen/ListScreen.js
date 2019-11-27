@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import dataArray from "../../data/dataArray";
+import Star from "../../components/Star/Star";
 import "./ListScreen.css";
 import "../../styling/generic.css";
 
@@ -20,12 +21,24 @@ class ListScreen extends Component {
       <div>
         <div className="background">
           <div className="mobile-container">
-            <h1 className="title">Learnt words</h1>
-            {this.getWords().map((word, index) => (
-              <ul key={index}>
-                {word.wordDanish} = {word.wordEnglish}
-              </ul>
-            ))}
+            <Star />
+            <h1 className="title"> &#x270F; Learnt words</h1>
+            <table>
+              <thead>
+                <tr>
+                  <th>Danish</th>
+                  <th>English</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.getWords().map((word, index) => (
+                  <tr key={index}>
+                    <td> {word.wordDanish}</td>
+                    <td>{word.wordEnglish}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
