@@ -3,9 +3,11 @@ import dataArray from "../../data/dataArray";
 import GameScreen from "../GameScreen/GameScreen";
 import EndOfLevelScreen from "../EndOfLevelScreen/EndOfLevelScreen";
 import Star from "../../components/Star/Star";
+import WordsButton from "../../components/WordsButton/WordsButton";
 import Sound from "../../components/Sound/Sound";
 import "../../styling/generic.css";
 import "./HintScreen.css";
+import ListScreen from "../ListScreen/ListScreen";
 
 
 class HintScreen extends Component {
@@ -13,12 +15,17 @@ class HintScreen extends Component {
     super(props);
     this.state = {
       dataArray: dataArray,
-      startGame: false
+      startGame: false,
+      startList: false
     };
   }
 
   handleStartGameClick = () => {
     this.setState({ startGame: true });
+  };
+
+  handleListClick = () => {
+    this.setState({ startList: true });
   };
 
   render() {
@@ -30,6 +37,10 @@ class HintScreen extends Component {
         />
       );
     }
+
+    if (this.state.startList === true) {
+      return <ListScreen hint={this.props.hint} />;
+    }
     if (this.props.hint === 13) {
       return <EndOfLevelScreen />;
     }
@@ -37,6 +48,7 @@ class HintScreen extends Component {
       <div className="background">
         <div className="mobile-container">
           <div>
+            <WordsButton onClick={this.handleListClick} />
             <Star />
           </div>
             <p className="normal-text">Daily Hint</p>

@@ -5,6 +5,7 @@ import "./App.css";
 
 import StartScreen from "./screens/StartScreen";
 import HintScreen from "./screens/HintScreen/HintScreen";
+import ListScreen from "./screens/ListScreen/ListScreen";
 
 class App extends Component {
   constructor() {
@@ -46,7 +47,7 @@ class App extends Component {
   render() {
     return (
       <div className="main-container">
-        <StartScreen />
+        <HintScreen />
       </div>
     );
   }

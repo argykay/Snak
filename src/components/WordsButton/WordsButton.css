@@ -1,0 +1,13 @@
+.pencil-wrapper {
+  display: inline-block;
+  float: left;
+  padding: 15px;
+  background-color: #012a46;
+  border: transparent;
+}
+
+.pencil {
+  text-align: left;
+  font-size: 25px;
+  color: #ff7661;
+}

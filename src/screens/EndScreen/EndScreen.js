@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
 import HintScreen from "../HintScreen/HintScreen";
+import ListScreen from "../ListScreen/ListScreen";
 import BackButton from "../../components/BackButton/BackButton";
+import WordsButton from "../../components/WordsButton/WordsButton";
 import Star from "../../components/Star/Star";
 import "../../styling/generic.css";
 import "./EndScreen.css";
@@ -19,14 +21,24 @@ class EndScreen extends Component {
     this.setState({ BackToHint: true });
   };
 
+  handleListClick = () => {
+    this.setState({ startList: true });
+  };
+
   render() {
     if (this.state.BackToHint === true) {
       return <HintScreen hint={this.state.hint + 1} />;
     }
+
+    if (this.state.startList === true) {
+      return <ListScreen hint={this.state.hint + 1} />;
+    }
+
     return (
       <div>
         <div className="background">
           <div className="mobile-container">
+            <WordsButton onClick={this.handleListClick} />
             <Star />
             <h1 className="screen-title">“Godt gået!”</h1>
             <p className="normal-text">as the Danes would say it.</p>
