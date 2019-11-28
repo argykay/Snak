@@ -10,7 +10,9 @@ class ListScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataArray: dataArray
+      dataArray: dataArray,
+      backToHint: false,
+      hint: this.props.hint
     };
   }
   getWords() {
@@ -18,12 +20,11 @@ class ListScreen extends Component {
   }
 
   handleBackToHintClick = () => {
-    this.setState({ BackToHint: true });
+    this.setState({ backToHint: true });
   };
 
   render() {
-    console.log(this.getWords());
-    if (this.state.BackToHint === true) {
+    if (this.state.backToHint === true) {
       return <HintScreen hint={this.props.hint} />;
     }
     return (
@@ -42,14 +43,22 @@ class ListScreen extends Component {
               <tbody>
                 {this.getWords().map((word, index) => (
                   <tr key={index}>
-                    <td> {word.wordDanish}</td>
+                    <td
+                      className="danish"
+                      onClick={() => word.pronounciation.play()}
+                    >
+                      {word.wordDanish}
+                    </td>
                     <td>{word.wordEnglish}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
             <div className="stickToBottom">
-              <BackButton onClick={this.handleBackToHintClick} />
+              <BackButton
+                onClick={this.handleBackToHintClick}
+                hint={this.props.hint}
+              />
             </div>
           </div>
         </div>

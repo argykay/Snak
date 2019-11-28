@@ -10,7 +10,7 @@ table {
 
 td,
 th {
-  padding: 8px;
+  padding: 20px;
   text-align: center;
 }
 
@@ -22,4 +22,8 @@ th {
   background: #012a46;
   font-weight: bold;
   color: #ff7661;
+}
+
+.danish {
+  text-decoration: underline;
 }

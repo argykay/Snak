@@ -4,7 +4,7 @@ export const dataArray = [
     svg: "./images/book.svg",
     wordDanish: "Bog",
     wordEnglish: "Book",
-    isUsed: true,
+    isUsed: false,
     pronounciation: new Audio("./pronounciations/bog.mp3")
   },
   {
@@ -12,7 +12,7 @@ export const dataArray = [
     svg: "./images/ruler.svg",
     wordDanish: "Lineal",
     wordEnglish: "Ruler",
-    isUsed: true,
+    isUsed: false,
     pronounciation: new Audio("./pronounciations/lineal.mp3")
   },
   {
@@ -20,7 +20,7 @@ export const dataArray = [
     svg: "./images/notes.svg",
     wordDanish: "Noter",
     wordEnglish: "Notes",
-    isUsed: true,
+    isUsed: false,
     pronounciation: new Audio("./pronounciations/noter.mp3")
   },
   {

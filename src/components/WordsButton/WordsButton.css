@@ -2,6 +2,8 @@
   display: inline-block;
   float: left;
   padding: 15px;
+  background-color: #012a46;
+  border: transparent;
 }
 
 .pencil {
