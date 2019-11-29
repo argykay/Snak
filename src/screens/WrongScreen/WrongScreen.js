@@ -26,7 +26,7 @@ class WrongScreen extends Component {
       <div>
         <div className="background">
           <div className="mobile-container">
-            <Star />
+            <div className="star-container"> <Star /></div>
 
             <h1 className="screen-title">Opps, wrong answer.</h1>
 

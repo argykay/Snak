@@ -95,7 +95,7 @@ p,
   }
 }
 
-@media only screen and (max-width: 330px){
+@media only screen and (max-height: 667px){
   .normal-text{
     padding-top:0px; 
   }

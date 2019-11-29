@@ -87,3 +87,21 @@
     transform: rotate(360deg);
   }
 }
+
+@media only screen and (max-height: 600px){
+  .star-container{
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-height: 736px){
+  .star-container{
+    margin-bottom: 65px;
+  }
+}
+
+@media only screen and (max-height: 826px){
+  .star-container{
+    margin-bottom: 86px;
+  }
+}
