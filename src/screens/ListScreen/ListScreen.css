@@ -11,7 +11,8 @@ table {
 td,
 th {
   padding: 20px;
-  text-align: left;
+  text-align: center;
+  width: 50%;
 }
 
 tr:nth-of-type(odd) {
@@ -24,12 +25,7 @@ th {
   color: #ff7661;
 }
 
-/*
-.danish {
-  text-decoration: underline;
-}*/
-
-.play-svg{
-  display:inline-block; 
-  width:5%; 
+.play-svg {
+  display: inline-block;
+  width: 5%;
 }

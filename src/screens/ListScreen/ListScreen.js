@@ -47,7 +47,8 @@ class ListScreen extends Component {
                       className="danish"
                       onClick={() => word.pronounciation.play()}
                     >
-                     <img className="play-svg" src="./../images/play.svg"/> {word.wordDanish} 
+                      <img className="play-svg" src="./../images/play.svg" />{" "}
+                      {word.wordDanish}
                     </td>
                     <td>{word.wordEnglish}</td>
                   </tr>
