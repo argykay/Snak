@@ -27,23 +27,23 @@ class WrongScreen extends Component {
         <div className="background">
           <div className="mobile-container">
             <Star />
-            <div className="center-content">
-              <div className="space">
-                <h1 className="screen-title">Opps, wrong answer.</h1>
-              </div>
-              <div className="space">
-                <p className="normal-text">
-                  Hmm...Give it another go to earn a star!
-                </p>
-              </div>
-              <div className="space">
-                <button
-                  className="main-button"
-                  onClick={this.handleBackToHintClick}
-                >
-                  try again
-                </button>
-              </div>
+
+            <h1 className="screen-title">Opps, wrong answer.</h1>
+
+            <div className="arrow">
+              <img src="./../images/arrow.svg" />
+
+              <p className="normal-text">
+                Hmm...Give it another go to earn a star!
+              </p>
+
+              <div className="space"></div>
+              <button
+                className="main-button"
+                onClick={this.handleBackToHintClick}
+              >
+                try again
+              </button>
             </div>
           </div>
         </div>
