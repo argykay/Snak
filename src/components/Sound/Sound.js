@@ -21,7 +21,7 @@ class Sound extends Component {
     return (
       <div className="button-wrapper">
         <div className="button-sound" onClick={this.play}>
-          <p>&#x25BA;</p>
+          <img className="sound-word" src="./../images/play.svg"/>
         </div>
       </div>
     );

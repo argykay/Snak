@@ -72,7 +72,7 @@ p,
   font-weight: bold;
   font-family: fira code;
   font-size: 23px;
-/* margin-top: 37px;*/
+  /* margin-top: 37px;*/
 }
 
 .star-image {
@@ -92,5 +92,11 @@ p,
   50% {
     transform: scale(0.5);
     opacity: 0.5;
+  }
+}
+
+@media only screen and (max-height: 667px) {
+  .normal-text {
+    padding-top: 7px;
   }
 }

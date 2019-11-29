@@ -4,21 +4,16 @@
   box-sizing: border-box;
   width: 20px;
   height: 20px;
-  padding-top: 1px;
-  padding-left: 3px;
-  border: 2px solid #ff7661;
-  background-color: #ff7661;
-  border-radius: 50%;
-  color: #012a46;
-  text-align: center;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: bold;
+}
+
+.sound-word{
+  position: relative;
+  top: 1px;
 }
 
 .button-wrapper {
   display: inline-block;
-  position: absolute;
-  top: 49px;
-  margin-left: 4px;
+  position: relative;
+ /* top: 49px;
+  margin-left: 4px; */
 }

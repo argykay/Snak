@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Code|Rubik&display=swap");
 
-.gm{
-  width:100%;
+.gm {
+  width: 100%;
 }
 
 .game-button {
@@ -20,8 +20,13 @@ img.gm-img {
   margin-right: auto;
 }
 
-.screen-title{
-  width:unset; 
+.screen-title {
+  width: unset;
   margin-bottom: 4%;
   padding-right: 3px;
+}
+
+.normal-text {
+  padding-bottom: 5px;
+  padding-top: 0!;
 }
