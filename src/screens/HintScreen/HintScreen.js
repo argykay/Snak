@@ -63,13 +63,13 @@ class HintScreen extends Component {
             <div className="wrapper-word">
               <h1 className="screen-title">
                 {this.props.hint ? (
-                  <div>{this.state.dataArray[this.props.hint].wordDanish} </div>
+                  <div>{this.state.dataArray[this.props.hint].wordDanish}  <Sound className="sound-hint" hint={this.props.hint} /> </div>
                 ) : (
-                  <div>{this.state.dataArray[0].wordDanish} </div>
+                  <div>{this.state.dataArray[0].wordDanish}  <Sound className="sound-hint" hint={this.props.hint} /></div>
                 )}
               </h1>
             </div>
-            <Sound hint={this.props.hint} />
+           
           </div>
           <button className="main-button" onClick={this.handleStartGameClick}>
             start

@@ -23,14 +23,6 @@
   padding-top: 3vh;
 }
 
-
-.wrapper-word {
-  display: inline-block;
-  padding-right: 10px;
-}
-
-
-
 .dh-image {
   display: flex; 
   align-content: unsafe;

@@ -11,7 +11,7 @@ import shuffle from "../../utils/shuffle";
 import "./GameScreen.css";
 import "../../styling/generic.css";
 import StartScreen from "../StartScreen";
-//Git connection test
+
 class GameScreen extends Component {
   constructor(props) {
     super(props);

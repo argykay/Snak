@@ -94,3 +94,9 @@ p,
     opacity: 0.5;
   }
 }
+
+@media only screen and (max-width: 330px){
+  .normal-text{
+    padding-top:0px; 
+  }
+}
