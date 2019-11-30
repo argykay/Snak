@@ -40,4 +40,8 @@ mess
     console.log("Error occured");
   });
 
+mess.onMessage(function(payload) {
+  console.log("onMessage:", payload);
+});
+
 export default firebase;
