@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/database";
 import "firebase/auth";
+import { messaging } from "firebase";
 
 import { API_KEY, APP_ID } from "./data/FileConstants";
 
@@ -25,5 +26,18 @@ export const provider = new firebase.auth.GoogleAuthProvider();
 // Authentication
 export const auth = firebase.auth();
 
+const mess = firebase.messaging();
+mess
+  .requestPermission()
+  .then(function() {
+    console.log("Have permission");
+    return mess.getToken();
+  })
+  .then(function(token) {
+    console.log(token);
+  })
+  .catch(function(err) {
+    console.log("Error occured");
+  });
 
 export default firebase;
