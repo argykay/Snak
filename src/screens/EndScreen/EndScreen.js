@@ -42,10 +42,10 @@ class EndScreen extends Component {
               <WordsButton onClick={this.handleListClick} />
               <Star />
             </div>
-            
+
             <h1 className="screen-title">“Godt gået!”</h1>
             <p className="normal-text">as the Danes would say it.</p>
-            <div className="dh-image">
+            <div className="ES-image">
               <img className="overlay" src="./../images/endGame.png" />
             </div>
             <p className="normal-text">

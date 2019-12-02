@@ -47,7 +47,7 @@ class App extends Component {
   render() {
     return (
       <div className="main-container">
-        <HintScreen />
+        <StartScreen />
       </div>
     );
   }

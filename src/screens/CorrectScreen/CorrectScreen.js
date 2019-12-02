@@ -4,7 +4,6 @@ import EndScreen from "../EndScreen/EndScreen";
 import Star from "../../components/Star/Star";
 import getStars from "../../utils/getStars";
 import "../../styling/generic.css";
-import "./CorrectScreen.css";
 import TrialScreen from "../TrialScreen/TrialScreen";
 
 class CorrectScreen extends Component {
