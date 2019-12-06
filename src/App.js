@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import firebase from "./Firebase";
-
 import "./App.css";
 
+import firebase from "./Firebase";
 import StartScreen from "./screens/StartScreen";
-import HintScreen from "./screens/HintScreen/HintScreen";
-import ListScreen from "./screens/ListScreen/ListScreen";
 
 class App extends Component {
   constructor() {
@@ -28,21 +25,6 @@ class App extends Component {
       }
     });
   }
-
-  /*
-  registerUser = fullName => {
-    firebase.auth().onAuthStateChanged(FBUser => {
-      FBUser.updateProfile({
-        fullname: fullName
-      }).then(() => {
-        this.setState({
-          user: FBUser,
-          fullname: FBUser.fullname,
-          userID: FBUser.uid
-        });
-      });
-    });
-  };*/
 
   render() {
     return (
