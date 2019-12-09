@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import firebase, { loginToFirebase } from "../Firebase";
-import ErrorMessage from "../components/ErrorMessage";
+
+import firebase from "../Firebase";
+import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 import BackButton from "../components/BackButton/BackButton";
 import StartScreen from "./StartScreen";
+import HintScreen from "./HintScreen/HintScreen";
 
 class LogInScreen extends Component {
   constructor(props) {
@@ -30,7 +32,7 @@ class LogInScreen extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.firebaseLoginUser();
-    this.setState({ userLoggedIn: true });
+    //  this.setState({ userLoggedIn: true });
   }
 
   firebaseLoginUser() {
@@ -38,19 +40,27 @@ class LogInScreen extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    // Firebase authentication
-    loginToFirebase(
-      logInCredentials.email,
-      logInCredentials.password,
-      error => {
-        if (error.message !== null) {
-          this.setState({ errorMessage: error.message });
-        } else {
-          this.setState({ errorMessage: null });
-        }
-      }
-    );
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(
+        logInCredentials.email,
+        logInCredentials.password
+      )
+      .then(() => {
+        this.setState({ userLoggedIn: true });
+      }) //The catch will stay, but then take the content of the catch out in a "helper" function and then call that
+      .catch(error => {
+        this.checkError(error);
+      });
   }
+
+  checkError = error => {
+    if (error.message !== null) {
+      this.setState({ errorMessage: error.message });
+    } else {
+      this.setState({ errorMessage: null });
+    }
+  };
 
   handleBackClick = () => {
     this.setState({ goBack: true });
@@ -58,7 +68,7 @@ class LogInScreen extends Component {
 
   render() {
     if (this.state.userLoggedIn === true) {
-      return <p>user is logged in</p>;
+      return <HintScreen />;
     }
     if (this.state.goBack === true) {
       return <StartScreen />;
@@ -66,6 +76,7 @@ class LogInScreen extends Component {
     return (
       <div className="main-container">
         <div className="form-container">
+          <div className="snak-title">Snak</div>
           <form onSubmit={this.handleSubmit}>
             {this.state.errorMessage !== null ? (
               <ErrorMessage message={this.state.errorMessage} />

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import ErrorMessage from "../components/ErrorMessage";
-import firebase, { signUpToFirebase } from "../Firebase";
+
+import firebase from "../Firebase";
 import BackButton from "../components/BackButton/BackButton";
+import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 import StartScreen from "./StartScreen";
+import HintScreen from "../screens/HintScreen/HintScreen";
 
 class SignUpScreen extends Component {
   constructor(props) {
@@ -38,32 +40,40 @@ class SignUpScreen extends Component {
       }
     });
   }
-
   handleSubmit(e) {
     e.preventDefault();
     this.firebaseCreateUser();
-    this.setState({ userSignedUp: true });
+    //this.setState({ userSignedUp: true });
   }
 
   firebaseCreateUser() {
+    // e.preventDefault();
     let signUpCredentials = {
       fullname: this.state.fullname,
       email: this.state.email,
       password: this.state.password
     };
-    signUpToFirebase(
-      signUpCredentials.email,
-      signUpCredentials.password,
-      signUpCredentials.fullname,
-      error => {
-        if (error.message !== null) {
-          this.setState({ errorMessage: error.message });
-        } else {
-          this.setState({ errorMessage: null });
-        }
-      }
-    );
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(
+        signUpCredentials.email,
+        signUpCredentials.password
+      )
+      .then(() => {
+        // this.props.registerUser(signUpCredentials.fullname);
+        this.setState({ userSignedUp: true });
+      })
+      .catch(error => {
+        this.checkError(error);
+      });
   }
+  checkError = error => {
+    if (error.message !== null) {
+      this.setState({ errorMessage: error.message });
+    } else {
+      this.setState({ errorMessage: null });
+    }
+  };
 
   handleBackClick = () => {
     this.setState({ goBack: true });
@@ -71,12 +81,7 @@ class SignUpScreen extends Component {
 
   render() {
     if (this.state.userSignedUp === true) {
-      return (
-        <p>
-          User {this.state.fullname} with email {this.state.email} has now
-          created an account!
-        </p>
-      );
+      return <HintScreen />;
     }
     if (this.state.goBack === true) {
       return <StartScreen />;
@@ -84,10 +89,11 @@ class SignUpScreen extends Component {
     return (
       <div className="main-container">
         <div className="form-container">
+          <div className="snak-title">Snak</div>
+          {this.state.errorMessage !== null ? (
+            <ErrorMessage message={this.state.errorMessage} />
+          ) : null}
           <form onSubmit={this.handleSubmit}>
-            {this.state.errorMessage !== null ? (
-              <ErrorMessage message={this.state.errorMessage} />
-            ) : null}
             <input
               type="text"
               name="fullname"

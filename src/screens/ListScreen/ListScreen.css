@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Code|Rubik&display=swap");
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #012a46;
+  color: #fff;
+  margin-top: 30px;
+}
+
+td,
+th {
+  padding: 20px;
+  text-align: center;
+  width: 50%;
+}
+
+tr:nth-of-type(odd) {
+  background: #25465d;
+}
+
+th {
+  background: #012a46;
+  font-weight: bold;
+  color: #ff7661;
+}
+
+.play-svg {
+  display: inline-block;
+  width: 5%;
+}
