@@ -21,14 +21,6 @@
   margin: auto;
 }
 
-h1,
-.h1 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-weight: normal;
-  display: inline-block;
-}
-
 .screen-title {
   color: #ff7661;
   font-family: Rubik;

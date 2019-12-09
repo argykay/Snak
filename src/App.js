@@ -3,6 +3,7 @@ import "./App.css";
 
 import firebase from "./Firebase";
 import StartScreen from "./screens/StartScreen";
+import "./styling/generic.css";
 
 class App extends Component {
   constructor() {

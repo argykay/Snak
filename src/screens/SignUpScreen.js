@@ -89,6 +89,7 @@ class SignUpScreen extends Component {
     return (
       <div className="main-container">
         <div className="form-container">
+          <div className="snak-title">Snak</div>
           {this.state.errorMessage !== null ? (
             <ErrorMessage message={this.state.errorMessage} />
           ) : null}

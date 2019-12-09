@@ -76,6 +76,7 @@ class LogInScreen extends Component {
     return (
       <div className="main-container">
         <div className="form-container">
+          <div className="snak-title">Snak</div>
           <form onSubmit={this.handleSubmit}>
             {this.state.errorMessage !== null ? (
               <ErrorMessage message={this.state.errorMessage} />

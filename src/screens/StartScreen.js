@@ -39,6 +39,7 @@ class StartScreen extends Component {
     return (
       <div className="main-container">
         <div className="form-container">
+          <div className="snak-title">Snak</div>
           <button className="button-one" onClick={this.handleLogInClick}>
             LOGIN
           </button>
