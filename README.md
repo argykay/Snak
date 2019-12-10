@@ -17,3 +17,7 @@ Ida Marie Borberg (idbo@itu.dk)
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Snak_Android_Wrapper
+Snak's Android wrapper app can be found on:
+https://github.com/argykay/Snak_Android_Wrapper
