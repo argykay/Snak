@@ -26,6 +26,11 @@ class EndScreen extends Component {
   };
 
   render() {
+    /**
+     * Increment functions
+     * Either increment through clicking back OR
+     * increment by clicking list icon
+     */
     if (this.state.BackToHint === true) {
       return <HintScreen hint={this.state.hint + 1} />;
     }

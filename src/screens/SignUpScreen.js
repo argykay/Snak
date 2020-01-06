@@ -20,6 +20,10 @@ class SignUpScreen extends Component {
     };
 
     // Binding functions
+    /**
+     * The two first "this" refers to the actual function handlechange, the third
+     * ‘this’ is the context we are passing to .bind() and it is referring to the App context.
+     */
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.firebaseCreateUser = this.firebaseCreateUser.bind(this);
@@ -28,8 +32,15 @@ class SignUpScreen extends Component {
   handleChange(e) {
     const name = e.target.name;
     const value = e.target.value;
+
+    /**
+     * Calling checkPasswords so it will check when writing the password input field 
+     * it will automatically give notice that the passwords don't match until the 
+     * two input fields are completely the same. 
+     */
     this.checkPasswords(name, value);
   }
+
 
   checkPasswords(itemName, itemValue) {
     this.setState({ [itemName]: itemValue }, () => {
@@ -40,7 +51,17 @@ class SignUpScreen extends Component {
       }
     });
   }
+
+  /**
+   * 
+   */
   handleSubmit(e) {
+    /**
+     * preventDefault stops the default action of the element from happening
+     * In this case when clicking "sign-up" it will not refresh the page, which is 
+     * the default of form-submit-buttons, but it will call our methods instead of doing the 
+     * default. 
+     */
     e.preventDefault();
     this.firebaseCreateUser();
     //this.setState({ userSignedUp: true });
@@ -67,6 +88,7 @@ class SignUpScreen extends Component {
         this.checkError(error);
       });
   }
+
   checkError = error => {
     if (error.message !== null) {
       this.setState({ errorMessage: error.message });
@@ -74,6 +96,7 @@ class SignUpScreen extends Component {
       this.setState({ errorMessage: null });
     }
   };
+  
 
   handleBackClick = () => {
     this.setState({ goBack: true });

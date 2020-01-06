@@ -2,9 +2,17 @@ import firebase from "firebase/app";
 import "firebase/database";
 import "firebase/auth";
 
+
+/*
+Retrieves the api-key from fileconstant.
+Note! The api-key should not be pushed to github  
+*/
 import { API_KEY, APP_ID } from "./data/FileConstants";
 
 // Firebase Configuration
+/**
+ * Necessary configuration information to use our Firebase database within our system. 
+ */
 const firebaseConfig = {
   apiKey: API_KEY,
   authDomain: "react-snak.firebaseapp.com",

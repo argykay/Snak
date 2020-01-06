@@ -5,6 +5,7 @@ import firebase from "./Firebase";
 import StartScreen from "./screens/StartScreen";
 import "./styling/generic.css";
 
+
 class App extends Component {
   constructor() {
     super();
@@ -15,6 +16,9 @@ class App extends Component {
     };
   }
 
+  /** This is a react lifecycle method.
+   * This code is redudant at the moment, but if we decide to add routing, this will be necessary. 
+   */
   componentDidMount() {
     firebase.auth().onAuthStateChanged(FBUser => {
       if (FBUser) {

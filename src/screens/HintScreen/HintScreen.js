@@ -31,6 +31,10 @@ class HintScreen extends Component {
   render() {
     if (this.state.startGame === true) {
       return (
+        /**
+          * If no props of hints has been passed on, take zero.
+          * trial will never receive a prop from other than the start-screen
+         */
         <GameScreen
           hint={this.props.hint ? this.props.hint : 0}
           trial={this.props.trial}

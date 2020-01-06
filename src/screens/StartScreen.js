@@ -4,6 +4,7 @@ import LogInScreen from "./LogInScreen";
 import SignUpScreen from "./SignUpScreen";
 import HintScreen from "../screens/HintScreen/HintScreen";
 
+
 class StartScreen extends Component {
   constructor(props) {
     super(props);
@@ -27,12 +28,19 @@ class StartScreen extends Component {
   };
 
   render() {
+    /*
+    * Conditional rendering. 
+    */
     if (this.state.logIn === true) {
       return <LogInScreen />;
     }
     if (this.state.signUp === true) {
       return <SignUpScreen />;
     }
+    /**
+     * In the trial game, we make sure that it always shows the coffee-game, which is hint number 12. 
+     * We pass this 12 to hint-screen to make sure it retrieves the coffee-game. 
+     */
     if (this.state.trial === true) {
       return <HintScreen hint={12} trial={this.state.trial} />;
     }

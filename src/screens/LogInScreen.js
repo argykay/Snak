@@ -78,6 +78,10 @@ class LogInScreen extends Component {
         <div className="form-container">
           <div className="snak-title">Snak</div>
           <form onSubmit={this.handleSubmit}>
+            {/**This works like a if-statement, if there are errors, render 
+             * <ErrorMessage> </ErrorMessage>
+             * If it is null, then don't. 
+             */}
             {this.state.errorMessage !== null ? (
               <ErrorMessage message={this.state.errorMessage} />
             ) : null}
